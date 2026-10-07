@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ion Engine | Ionix Studio</title>
+    <meta name="description" content="Ion Engine is Ionix Studio's in-house game engine, coming soon to other creators.">
+    <meta name="theme-color" content="#07060D">
+
+    <meta property="og:title" content="Ion Engine | Ionix Studio">
+    <meta property="og:description" content="Ion Engine — built from real production use, coming soon to other creators.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307060D'/%3E%3Cg fill='none' stroke='%238B6CFF' stroke-width='1.6'%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23C8FF3D'/%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ionix.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Ambient background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+    <header id="home">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <a href="index.html" class="brand" aria-label="Ionix home">
+                    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><g class="ring"><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(120 16 16)"/></g><circle class="core" cx="16" cy="16" r="3.4" fill="#C8FF3D"/></svg>
+                    IONIX
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html" class="active">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-dropdown">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+            <div class="nav-dropdown" id="nav-dropdown">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html" class="active">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-dropdown-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section id="page-header" class="page-header" data-index="03 / ION ENGINE">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Coming Soon</span>
+                    <h2>Ion Engine</h2>
+                    <p>Every module below, we built for ourselves first — while shipping our own games. Click "Know More" for the full picture.</p>
+                </header>
+            </div>
+        </section>
+
+        <section id="engine-modules">
+            <div class="container">
+                <div class="unity-grid">
+                    <article class="unity-card" data-project="core-runtime">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · Runtime</span>
+                            <h3>Core Runtime</h3>
+                            <p>One engine core for pixel-art platformers and fully 3D worlds alike.</p>
+                            <div class="project-stats"><span>2D &amp; 3D</span><span>Single Codebase</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                    <article class="unity-card" data-project="asset-pipeline">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · Pipeline</span>
+                            <h3>Asset Pipeline</h3>
+                            <p>Import, version, and hot-reload art and audio without breaking your flow.</p>
+                            <div class="project-stats"><span>Hot Reload</span><span>Versioning</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                    <article class="unity-card" data-project="scripting-api">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · API</span>
+                            <h3>Scripting API</h3>
+                            <p>A clean, typed API into engine internals — no black boxes.</p>
+                            <div class="project-stats"><span>Typed</span><span>Documented</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                    <article class="unity-card" data-project="cross-export">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · Export</span>
+                            <h3>Cross-Platform Export</h3>
+                            <p>Build once, target PC, web, and mobile from the same project.</p>
+                            <div class="project-stats"><span>PC</span><span>Web</span><span>Mobile</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                    <article class="unity-card" data-project="live-preview">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · Editor</span>
+                            <h3>Live Preview</h3>
+                            <p>See changes in your running game the moment you save.</p>
+                            <div class="project-stats"><span>Instant Reload</span><span>In-Editor Play</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                    <article class="unity-card" data-project="docs">
+                        <div class="unity-card-cover"><div class="cover-placeholder"></div></div>
+                        <div class="unity-card-body">
+                            <span class="project-tag">Ion Engine · Docs</span>
+                            <h3>Docs From Day One</h3>
+                            <p>Written alongside the engine, not bolted on after — because stale docs help no one.</p>
+                            <div class="project-stats"><span>Guides</span><span>API Reference</span></div>
+                            <button class="unity-more-btn" type="button">Know More →</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="engine-cta">
+            <div class="container" style="max-width:640px; text-align:center;">
+                <header class="section-header" style="margin-inline:auto; text-align:center; margin-bottom:30px;">
+                    <span class="eyebrow">Get Notified</span>
+                    <h2>Want Early Access?</h2>
+                    <p>We'll be opening Ion Engine up to outside creators soon. Reach out and we'll keep you posted.</p>
+                </header>
+                <a href="contact.html" class="btn btn-green">Contact Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ION ENGINE MODULE MODAL -->
+    <div class="unity-modal" id="unity-modal" role="dialog" aria-modal="true" aria-labelledby="unity-modal-title" hidden>
+        <div class="unity-modal-backdrop" id="unity-modal-backdrop"></div>
+        <div class="unity-modal-panel">
+            <button class="unity-modal-close" id="unity-modal-close" aria-label="Close">✕</button>
+            <div class="unity-modal-gallery" id="unity-modal-gallery"></div>
+            <div class="unity-modal-body">
+                <span class="project-tag" id="unity-modal-tag"></span>
+                <h3 id="unity-modal-title"></h3>
+                <p id="unity-modal-desc"></p>
+                <div class="project-stats" id="unity-modal-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+        <div class="container">
+
+            <p>© 2026 Ionix Studio. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ---------- Mobile nav dropdown ---------- */
+        (function () {
+            var toggle = document.getElementById('nav-toggle');
+            var dropdown = document.getElementById('nav-dropdown');
+            if (!toggle || !dropdown) return;
+
+            function closeMenu() {
+                dropdown.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            function openMenu() {
+                dropdown.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (dropdown.classList.contains('open')) {closeMenu();} else {openMenu();}
+            });
+            dropdown.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', closeMenu);
+            });
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target) && e.target !== toggle) closeMenu();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 760) closeMenu();
+            });
+        })();
+
+        /* ---------- Scroll progress bar ---------- */
+        (function () {
+            var bar = document.getElementById('scroll-progress-bar');
+            if (!bar) return;
+            function update() {
+                var h = document.documentElement;
+                var scrolled = h.scrollTop;
+                var height = h.scrollHeight - h.clientHeight;
+                var pct = height > 0 ? (scrolled / height) * 100 : 0;
+                bar.style.width = pct + '%';
+            }
+            document.addEventListener('scroll', update, {passive: true});
+            update();
+        })();
+
+        /* ---------- Scroll reveal ---------- */
+        (function () {
+            var targets = document.querySelectorAll(
+                '.section-header, .card, .project-card, .unity-card, .achievement-card, .process-card, .timeline-item, .contact-card, .social-links'
+            );
+            if (!targets.length) return;
+
+            var seen = new Map();
+            targets.forEach(function (el) {
+                el.classList.add('reveal');
+                var parent = el.parentElement;
+                var count = seen.get(parent) || 0;
+                el.style.transitionDelay = REDUCED_MOTION ? '0ms' : Math.min(count * 90, 360) + 'ms';
+                seen.set(parent, count + 1);
+            });
+
+            if (REDUCED_MOTION) {
+                targets.forEach(function (el) {el.classList.add('in-view');});
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.15});
+            targets.forEach(function (el) {io.observe(el);});
+        })();
+
+        /* ---------- Magnetic buttons + ripple ---------- */
+        (function () {
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (btn) {
+                if (!REDUCED_MOTION) {
+                    btn.addEventListener('mousemove', function (e) {
+                        var r = btn.getBoundingClientRect();
+                        var x = e.clientX - r.left - r.width / 2;
+                        var y = e.clientY - r.top - r.height / 2;
+                        btn.style.transform = 'translate(' + x * 0.18 + 'px,' + (y * 0.35 - 4) + 'px)';
+                    });
+                    btn.addEventListener('mouseleave', function () {
+                        btn.style.transform = '';
+                    });
+                }
+                btn.addEventListener('click', function (e) {
+                    var r = btn.getBoundingClientRect();
+                    var ripple = document.createElement('span');
+                    ripple.className = 'btn-ripple';
+                    ripple.style.left = (e.clientX - r.left) + 'px';
+                    ripple.style.top = (e.clientY - r.top) + 'px';
+                    btn.appendChild(ripple);
+                    setTimeout(function () {ripple.remove();}, 650);
+                });
+            });
+        })();
+
+        /* ---------- 3D tilt on cards ---------- */
+        (function () {
+            if (REDUCED_MOTION) return;
+            var cards = document.querySelectorAll('.project-card, .skill-card, .achievement-card, .unity-card');
+            cards.forEach(function (card) {
+                card.addEventListener('mousemove', function (e) {
+                    var r = card.getBoundingClientRect();
+                    var px = (e.clientX - r.left) / r.width;
+                    var py = (e.clientY - r.top) / r.height;
+                    var rx = (py - 0.5) * -10;
+                    var ry = (px - 0.5) * 10;
+                    card.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    card.style.transform = '';
+                });
+            });
+        })();
+
+        /* ---------- Ion Engine module "Know More" modal ---------- */
+        (function () {
+            var modal = document.getElementById('unity-modal');
+            var backdrop = document.getElementById('unity-modal-backdrop');
+            var closeBtn = document.getElementById('unity-modal-close');
+            var galleryEl = document.getElementById('unity-modal-gallery');
+            var tagEl = document.getElementById('unity-modal-tag');
+            var titleEl = document.getElementById('unity-modal-title');
+            var descEl = document.getElementById('unity-modal-desc');
+            var tagsEl = document.getElementById('unity-modal-tags');
+            if (!modal) return;
+
+            var DATA = {
+                'core-runtime': {
+                    tag: 'Ion Engine · Runtime', title: 'Core Runtime', orientation: 'landscape',
+                    desc: 'One engine core for pixel-art platformers and fully 3D worlds alike. Rather than bolting a 3D pipeline onto a 2D engine (or vice versa), Ion Engine treats both as first-class citizens sharing the same scene graph, physics step and render loop.',
+                    tags: ['2D & 3D', 'Single Codebase', 'Shared Scene Graph', 'Deterministic Physics Step'], tiles: 2
+                },
+                'asset-pipeline': {
+                    tag: 'Ion Engine · Pipeline', title: 'Asset Pipeline', orientation: 'landscape',
+                    desc: 'Import, version, and hot-reload art and audio without breaking your flow. Assets are watched on disk and pushed into a running build in real time, so iterating on a sprite sheet or a sound cue never means a full rebuild.',
+                    tags: ['Hot Reload', 'Versioning', 'Live Asset Watch', 'No Rebuild Required'], tiles: 2
+                },
+                'scripting-api': {
+                    tag: 'Ion Engine · API', title: 'Scripting API', orientation: 'landscape',
+                    desc: 'A clean, typed API into engine internals — no black boxes. Every system we use to ship our own games — physics, input, audio, rendering — is exposed the same way to anyone building on Ion Engine.',
+                    tags: ['Typed', 'Documented', 'No Black Boxes', 'Same API We Use Internally'], tiles: 3
+                },
+                'cross-export': {
+                    tag: 'Ion Engine · Export', title: 'Cross-Platform Export', orientation: 'landscape',
+                    desc: 'Build once, target PC, web, and mobile from the same project. Platform-specific quirks are handled at the export layer, so day-to-day development stays platform-agnostic.',
+                    tags: ['PC', 'Web', 'Mobile', 'One Project, Many Targets'], tiles: 2
+                },
+                'live-preview': {
+                    tag: 'Ion Engine · Editor', title: 'Live Preview', orientation: 'portrait',
+                    desc: 'See changes in your running game the moment you save. Tweak a value, move a light, adjust a curve — the running build updates instantly, without losing game state.',
+                    tags: ['Instant Reload', 'In-Editor Play', 'State-Preserving'], tiles: 3
+                },
+                'docs': {
+                    tag: 'Ion Engine · Docs', title: 'Docs From Day One', orientation: 'landscape',
+                    desc: 'Written alongside the engine, not bolted on after — because we hate stale docs too. Every module ships with guides and a full API reference from its first public version.',
+                    tags: ['Guides', 'API Reference', 'Written With The Engine'], tiles: 2
+                }
+            };
+
+            var modalPanel = document.querySelector('.unity-modal-panel');
+            var lastFocused = null;
+
+            function openModal(key) {
+                var data = DATA[key];
+                if (!data) return;
+                tagEl.textContent = data.tag;
+                titleEl.textContent = data.title;
+                descEl.textContent = data.desc;
+                tagsEl.innerHTML = '';
+                data.tags.forEach(function (t) {
+                    var span = document.createElement('span');
+                    span.textContent = t;
+                    tagsEl.appendChild(span);
+                });
+                galleryEl.innerHTML = '';
+                galleryEl.classList.remove('gallery-portrait', 'gallery-landscape');
+                galleryEl.classList.add(data.orientation === 'portrait' ? 'gallery-portrait' : 'gallery-landscape');
+                if (modalPanel) {
+                    modalPanel.classList.remove('panel-portrait', 'panel-landscape');
+                    modalPanel.classList.add(data.orientation === 'portrait' ? 'panel-portrait' : 'panel-landscape');
+                }
+                for (var i = 0; i < (data.tiles || 2); i++) {
+                    var tile = document.createElement('div');
+                    tile.className = 'gallery-tile-placeholder';
+                    galleryEl.appendChild(tile);
+                }
+                lastFocused = document.activeElement;
+                modal.removeAttribute('hidden');
+                document.body.classList.add('modal-open');
+                closeBtn.focus();
+            }
+            function closeModal() {
+                modal.setAttribute('hidden', '');
+                document.body.classList.remove('modal-open');
+                if (lastFocused && lastFocused.focus) lastFocused.focus();
+            }
+            document.querySelectorAll('.unity-card').forEach(function (card) {
+                var btn = card.querySelector('.unity-more-btn');
+                var key = card.getAttribute('data-project');
+                if (btn) btn.addEventListener('click', function () {openModal(key);});
+            });
+            backdrop.addEventListener('click', closeModal);
+            closeBtn.addEventListener('click', closeModal);
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.hasAttribute('hidden')) closeModal();
+            });
+        })();
+    </script>
+
+    <script src="ionix.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About | Ionix Studio</title>
+    <meta name="description" content="Ionix is a small, independent game studio focused on original games and the tools behind them.">
+    <meta name="theme-color" content="#07060D">
+
+    <meta property="og:title" content="About | Ionix Studio">
+    <meta property="og:description" content="A small team making original games — and building the engine we wished we had along the way.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307060D'/%3E%3Cg fill='none' stroke='%238B6CFF' stroke-width='1.6'%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23C8FF3D'/%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ionix.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Ambient background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+    <header id="home">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <a href="index.html" class="brand" aria-label="Ionix home">
+                    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><g class="ring"><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(120 16 16)"/></g><circle class="core" cx="16" cy="16" r="3.4" fill="#C8FF3D"/></svg>
+                    IONIX
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-dropdown">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+            <div class="nav-dropdown" id="nav-dropdown">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-dropdown-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section id="page-header" class="page-header" data-index="04 / ABOUT">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">About</span>
+                    <h2>About Ionix</h2>
+                    <p>A small team making original games — and building the engine we wished we had along the way.</p>
+                </header>
+            </div>
+        </section>
+
+        <section id="about-story">
+            <div class="container">
+                <div class="about-grid">
+                    <article class="card about-bio">
+                        <p>
+                            Ionix started with a simple frustration: most tools force a
+                            trade-off between speed and control. So alongside every game
+                            we ship, we've been building our own — Ion Engine — shaped
+                            entirely by what we actually needed on real projects, not a
+                            features checklist.
+                        </p>
+                        <p>
+                            Day to day we're heads-down on gameplay systems, AI behaviors,
+                            camera work and UI feel, with a strong focus on scalable
+                            architecture, clean code and performance — because a game
+                            that stutters on real hardware is a game people quietly close.
+                        </p>
+                    </article>
+
+                    <article class="card about-facts">
+                        <ul class="fact-list">
+                            <li><span class="fact-label">Based</span><span class="fact-value">Remote-first studio</span></li>
+                            <li><span class="fact-label">Founded</span><span class="fact-value">2024</span></li>
+                            <li><span class="fact-label">Focus</span><span class="fact-value">Original games &amp; engine tooling</span></li>
+                            <li><span class="fact-label">Team</span><span class="fact-value">Small, multidisciplinary</span></li>
+                            <li><span class="fact-label">Availability</span><span class="fact-value">Open to publishing &amp; collaboration</span></li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Process</span>
+                    <h2>How We Build</h2>
+                    <p>The same five steps, every project, in this order.</p>
+                </header>
+
+                <div class="process-grid">
+                    <article class="process-card">
+                        <span class="process-number">01</span>
+                        <h3>Concept</h3>
+                        <p>Break the game down to the single mechanic that reads clearly in under three seconds.</p>
+                    </article>
+                    <article class="process-card">
+                        <span class="process-number">02</span>
+                        <h3>Prototype</h3>
+                        <p>Grey-box the mechanic and get it playable same-week, before any art is final.</p>
+                    </article>
+                    <article class="process-card">
+                        <span class="process-number">03</span>
+                        <h3>Build</h3>
+                        <p>Full implementation in Unity or Ion Engine, with systems built to survive scope changes.</p>
+                    </article>
+                    <article class="process-card">
+                        <span class="process-number">04</span>
+                        <h3>Polish</h3>
+                        <p>Playtest relentlessly, trim what doesn't earn its place, and tune feel until it clicks.</p>
+                    </article>
+                    <article class="process-card">
+                        <span class="process-number">05</span>
+                        <h3>Ship</h3>
+                        <p>Export per-platform builds, QA on real hardware, and hand off with a plan for what's next.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section id="timeline">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Timeline</span>
+                    <h2>Studio Timeline</h2>
+                </header>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2026 — Present</span>
+                            <h3>Ion Engine Early Access Prep</h3>
+                            <span class="timeline-company">Product</span>
+                            <p>Polishing Ion Engine for its first early-access release to outside creators, drawing directly on what we've learned shipping our own games with it.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h3>Pixel Forge Enters Development</h3>
+                            <span class="timeline-company">Tactics · In Development</span>
+                            <p>Started our first title built entirely on Ion Engine, stress-testing the engine's tooling on a real production timeline.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h3>Hollow Signal Ships In Beta</h3>
+                            <span class="timeline-company">Puzzle Platformer</span>
+                            <p>Our second release, and the first built with an eye toward the tooling that would eventually become Ion Engine.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h3>Ionix Founded — Volt Drift Ships</h3>
+                            <span class="timeline-company">Studio Origin</span>
+                            <p>Ionix started as a small team with one goal: ship one game properly. Volt Drift was our first release.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOGNITION -->
+        <section id="recognition">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Recognition</span>
+                    <h2>Milestones &amp; Recognition</h2>
+                    <p>Placeholder entries — swap in your studio's real milestones and press.</p>
+                </header>
+
+                <div class="achievement-grid">
+                    <article class="achievement-card">
+                        <div class="achievement-icon">🚀</div>
+                        <h3>First Title Shipped</h3>
+                        <p>Volt Drift launched on PC and web, marking our first commercial release as a studio.</p>
+                    </article>
+                    <article class="achievement-card">
+                        <div class="achievement-icon">🌱</div>
+                        <h3>Community-Backed Beta</h3>
+                        <p>Hollow Signal's beta grew through word of mouth alone, with players sharing feedback directly with the team.</p>
+                    </article>
+                    <article class="achievement-card">
+                        <div class="achievement-icon">🛠️</div>
+                        <h3>Building In The Open</h3>
+                        <p>We share regular devlogs and early prototypes as Ion Engine takes shape, ahead of its first early-access release.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="container">
+
+            <p>© 2026 Ionix Studio. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ---------- Mobile nav dropdown ---------- */
+        (function () {
+            var toggle = document.getElementById('nav-toggle');
+            var dropdown = document.getElementById('nav-dropdown');
+            if (!toggle || !dropdown) return;
+
+            function closeMenu() {
+                dropdown.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            function openMenu() {
+                dropdown.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (dropdown.classList.contains('open')) {closeMenu();} else {openMenu();}
+            });
+            dropdown.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', closeMenu);
+            });
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target) && e.target !== toggle) closeMenu();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 760) closeMenu();
+            });
+        })();
+
+        /* ---------- Scroll progress bar ---------- */
+        (function () {
+            var bar = document.getElementById('scroll-progress-bar');
+            if (!bar) return;
+            function update() {
+                var h = document.documentElement;
+                var scrolled = h.scrollTop;
+                var height = h.scrollHeight - h.clientHeight;
+                var pct = height > 0 ? (scrolled / height) * 100 : 0;
+                bar.style.width = pct + '%';
+            }
+            document.addEventListener('scroll', update, {passive: true});
+            update();
+        })();
+
+        /* ---------- Scroll reveal ---------- */
+        (function () {
+            var targets = document.querySelectorAll(
+                '.section-header, .card, .project-card, .unity-card, .achievement-card, .process-card, .timeline-item, .contact-card, .social-links'
+            );
+            if (!targets.length) return;
+
+            var seen = new Map();
+            targets.forEach(function (el) {
+                el.classList.add('reveal');
+                var parent = el.parentElement;
+                var count = seen.get(parent) || 0;
+                el.style.transitionDelay = REDUCED_MOTION ? '0ms' : Math.min(count * 90, 360) + 'ms';
+                seen.set(parent, count + 1);
+            });
+
+            if (REDUCED_MOTION) {
+                targets.forEach(function (el) {el.classList.add('in-view');});
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.15});
+            targets.forEach(function (el) {io.observe(el);});
+        })();
+
+        /* ---------- Magnetic buttons + ripple ---------- */
+        (function () {
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (btn) {
+                if (!REDUCED_MOTION) {
+                    btn.addEventListener('mousemove', function (e) {
+                        var r = btn.getBoundingClientRect();
+                        var x = e.clientX - r.left - r.width / 2;
+                        var y = e.clientY - r.top - r.height / 2;
+                        btn.style.transform = 'translate(' + x * 0.18 + 'px,' + (y * 0.35 - 4) + 'px)';
+                    });
+                    btn.addEventListener('mouseleave', function () {
+                        btn.style.transform = '';
+                    });
+                }
+                btn.addEventListener('click', function (e) {
+                    var r = btn.getBoundingClientRect();
+                    var ripple = document.createElement('span');
+                    ripple.className = 'btn-ripple';
+                    ripple.style.left = (e.clientX - r.left) + 'px';
+                    ripple.style.top = (e.clientY - r.top) + 'px';
+                    btn.appendChild(ripple);
+                    setTimeout(function () {ripple.remove();}, 650);
+                });
+            });
+        })();
+
+        /* ---------- 3D tilt on cards ---------- */
+        (function () {
+            if (REDUCED_MOTION) return;
+            var cards = document.querySelectorAll('.project-card, .skill-card, .achievement-card, .unity-card');
+            cards.forEach(function (card) {
+                card.addEventListener('mousemove', function (e) {
+                    var r = card.getBoundingClientRect();
+                    var px = (e.clientX - r.left) / r.width;
+                    var py = (e.clientY - r.top) / r.height;
+                    var rx = (py - 0.5) * -10;
+                    var ry = (px - 0.5) * 10;
+                    card.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    card.style.transform = '';
+                });
+            });
+        })();
+    </script>
+
+    <script src="ionix.js"></script>
+
+</body>
+
+</html>
