@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devangsharma28.github.io/ionixgames/sitemap.xml

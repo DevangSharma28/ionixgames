@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact | Ionix Studio</title>
     <meta name="description" content="Get in touch with Ionix Studio — press, publishing, collaboration, or feedback.">
+    <link rel="canonical" href="https://devangsharma28.github.io/ionixgames/contact.html">
+    <meta property="og:site_name" content="iONiX Games">
+    <meta property="og:title" content="Contact | Ionix Studio">
+    <meta property="og:description" content="Get in touch with Ionix Studio — press, publishing, collaboration, or feedback.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devangsharma28.github.io/ionixgames/contact.html">
+    <meta property="og:image" content="https://devangsharma28.github.io/ionixgames/Games/web/juice-king-tycoon-art.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#07060D">
 
-    <meta property="og:title" content="Contact | Ionix Studio">
-    <meta property="og:description" content="Press, publishing, collaboration, or feedback on a build — reach out directly.">
-    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="LOGO/favicon.png">
+    <link rel="apple-touch-icon" href="LOGO/apple-touch-icon.png">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307060D'/%3E%3Cg fill='none' stroke='%238B6CFF' stroke-width='1.6'%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(60 16 16)'/%3E%3Cellipse cx='16' cy='16' rx='13' ry='5.5' transform='rotate(120 16 16)'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='3.5' fill='%23C8FF3D'/%3E%3C/svg%3E">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Teko:wght@400;500;600;700&family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="ionix.css">
 </head>
@@ -39,8 +47,7 @@
             <div class="container">
 
                 <a href="index.html" class="brand" aria-label="Ionix home">
-                    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><g class="ring"><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="14" ry="6" fill="none" stroke="#8B6CFF" stroke-width="1.5" transform="rotate(120 16 16)"/></g><circle class="core" cx="16" cy="16" r="3.4" fill="#C8FF3D"/></svg>
-                    IONIX
+                    <img class="brand-logo" src="LOGO/logo.png" alt="iONiX Games" width="360" height="180">
                 </a>
 
                 <ul class="nav-links">
@@ -106,24 +113,30 @@
 
         <section id="contact-main">
             <div class="container contact-layout">
-                <form class="card contact-form" style="padding:34px;" action="#" method="post">
+                <form class="card contact-form" style="padding:34px;" action="https://docs.google.com/forms/d/e/1FAIpQLSc4_Qw2KqXHy-ui5gngJ01LBbHH6DqekpRx41ofaiOE5l0uGQ/formResponse" method="post" id="contact-form">
                     <div class="form-row">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                        <input type="text" id="name" name="entry.1112759050" placeholder="Your name" required>
                     </div>
                     <div class="form-row">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="entry.204561718" placeholder="you@example.com" required>
                     </div>
                     <div class="form-row">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                        <input type="text" id="subject" name="entry.1647930589" placeholder="What's this about?" required>
                     </div>
                     <div class="form-row">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+                        <textarea id="message" name="entry.955963655" placeholder="Tell us what's on your mind..." required></textarea>
+                    </div>
+                    <!-- Bot trap: hidden from people, bots fill it -->
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                     </div>
                     <button type="submit" class="btn btn-green">Send Message</button>
+                    <p class="form-status" id="form-status" role="status" aria-live="polite" style="margin-top:14px;"></p>
                 </form>
 
                 <div class="contact-side">
@@ -136,17 +149,17 @@
                     </article>
 
                     <a href="#" class="card contact-card">
-                        <div class="contact-card-icon">💬</div>
+                        <div class="contact-card-icon"><img src="UIAtlas/web/discord.png" alt="" width="64" height="64"></div>
                         <h3>Discord</h3>
                         <p>Join the community and talk to the team directly.</p>
                         <span class="contact-card-link">Join server →</span>
                     </a>
 
-                    <a href="#" class="card contact-card">
-                        <div class="contact-card-icon">🐦</div>
-                        <h3>X (Twitter)</h3>
-                        <p>Follow along for devlogs and build updates.</p>
-                        <span class="contact-card-link">Follow us →</span>
+                    <a href="https://www.instagram.com/ionix_games.in/" class="card contact-card" target="_blank" rel="noopener">
+                        <div class="contact-card-icon"><img src="UIAtlas/web/instagram.png" alt="" width="64" height="64"></div>
+                        <h3>Instagram</h3>
+                        <p>Behind-the-scenes, game reveals and update drops.</p>
+                        <span class="contact-card-link">@ionix_games.in →</span>
                     </a>
                 </div>
             </div>
@@ -159,10 +172,8 @@
                     <h2>Find Us Online</h2>
                 </header>
                 <div class="social-links">
-                    <a href="#">Discord</a>
-                    <a href="#">X (Twitter)</a>
-                    <a href="#">YouTube</a>
-                    <a href="mailto:ionixgames26@gmail.com">Email</a>
+                    <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.png" alt="" width="20" height="20">Instagram</a>
+                    <a href="mailto:ionixgames26@gmail.com"><img class="ui-ico" src="UIAtlas/web/email.png" alt="" width="20" height="20">Email</a>
                 </div>
             </div>
         </section>
@@ -173,7 +184,7 @@
 
         <div class="container">
 
-            <p>© 2026 Ionix Studio. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
+            <p>© 2026 Ionix Studio. All rights reserved. · <a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.png" alt="" width="20" height="20">Juice King Tycoon on Google Play</a> · <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.png" alt="" width="20" height="20">Instagram</a> · <a href="privacy.html">Privacy Policy</a></p>
 
         </div>
 
@@ -305,6 +316,37 @@
                 card.addEventListener('mouseleave', function () {
                     card.style.transform = '';
                 });
+            });
+        })();
+        /* ---------- Contact form -> Google Forms ---------- */
+        (function () {
+            var form = document.getElementById('contact-form');
+            var status = document.getElementById('form-status');
+            if (!form) return;
+            var loadedAt = Date.now();
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var data = new FormData(form);
+                // Bots fill the hidden field or submit instantly: fake success, send nothing
+                if (data.get('website') || Date.now() - loadedAt < 3000) {
+                    form.reset();
+                    status.textContent = 'Thanks! Your message is on its way — we reply within 2–3 business days.';
+                    return;
+                }
+                data.delete('website');
+                var btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                status.textContent = 'Sending…';
+                // Google Forms sends no CORS headers: response is opaque, so only network failure is detectable
+                fetch(form.action, {method: 'POST', mode: 'no-cors', body: data})
+                    .then(function () {
+                        form.reset();
+                        status.textContent = 'Thanks! Your message is on its way — we reply within 2–3 business days.';
+                    })
+                    .catch(function () {
+                        status.textContent = 'Could not send. Please email us at ionixgames26@gmail.com.';
+                    })
+                    .then(function () {btn.disabled = false;});
             });
         })();
     </script>

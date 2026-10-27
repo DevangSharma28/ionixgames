@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/ionixgames/">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Page Not Found | Ionix</title>
+    <meta name="description" content="Ion Engine is Ionix Studio's in-house game engine, coming soon to other creators.">
+    <meta property="og:site_name" content="iONiX Games">
+    <meta property="og:title" content="Ion Engine | Ionix Studio">
+    <meta property="og:description" content="Ion Engine is Ionix Studio's in-house game engine, coming soon to other creators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devangsharma28.github.io/ionixgames/ion-engine.html">
+    <meta property="og:image" content="https://devangsharma28.github.io/ionixgames/Games/web/juice-king-tycoon-art.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#07060D">
+
+    <link rel="icon" type="image/png" href="LOGO/favicon.png">
+    <link rel="apple-touch-icon" href="LOGO/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Teko:wght@400;500;600;700&family=Lilita+One&family=Nunito:wght@500;700;800;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ionix.css">
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Ambient background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+    <header id="home">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <a href="index.html" class="brand" aria-label="Ionix home">
+                    <img class="brand-logo" src="LOGO/logo.png" alt="iONiX Games" width="360" height="180">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-dropdown">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+            <div class="nav-dropdown" id="nav-dropdown">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-dropdown-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section id="page-header" class="page-header" data-index="404" style="min-height:70vh;">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">404</span>
+                    <h2>Lost In The Clouds</h2>
+                    <p>This page doesn't exist. <a href="index.html">Head back home</a> or <a href="games.html">check out our games</a>.</p>
+                </header>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="container">
+
+            <p>© 2026 Ionix Studio. All rights reserved. · <a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.png" alt="" width="20" height="20">Juice King Tycoon on Google Play</a> · <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.png" alt="" width="20" height="20">Instagram</a> · <a href="privacy.html">Privacy Policy</a></p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ---------- Mobile nav dropdown ---------- */
+        (function () {
+            var toggle = document.getElementById('nav-toggle');
+            var dropdown = document.getElementById('nav-dropdown');
+            if (!toggle || !dropdown) return;
+
+            function closeMenu() {
+                dropdown.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            function openMenu() {
+                dropdown.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (dropdown.classList.contains('open')) {closeMenu();} else {openMenu();}
+            });
+            dropdown.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', closeMenu);
+            });
+            document.addEventListener('click', function (e) {
+                if (!dropdown.contains(e.target) && e.target !== toggle) closeMenu();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMenu();
+            });
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 760) closeMenu();
+            });
+        })();
+
+        /* ---------- Scroll progress bar ---------- */
+        (function () {
+            var bar = document.getElementById('scroll-progress-bar');
+            if (!bar) return;
+            function update() {
+                var h = document.documentElement;
+                var scrolled = h.scrollTop;
+                var height = h.scrollHeight - h.clientHeight;
+                var pct = height > 0 ? (scrolled / height) * 100 : 0;
+                bar.style.width = pct + '%';
+            }
+            document.addEventListener('scroll', update, {passive: true});
+            update();
+        })();
+
+        /* ---------- Scroll reveal ---------- */
+        (function () {
+            var targets = document.querySelectorAll(
+                '.section-header, .card, .project-card, .unity-card, .achievement-card, .process-card, .timeline-item, .contact-card, .social-links'
+            );
+            if (!targets.length) return;
+
+            var seen = new Map();
+            targets.forEach(function (el) {
+                el.classList.add('reveal');
+                var parent = el.parentElement;
+                var count = seen.get(parent) || 0;
+                el.style.transitionDelay = REDUCED_MOTION ? '0ms' : Math.min(count * 90, 360) + 'ms';
+                seen.set(parent, count + 1);
+            });
+
+            if (REDUCED_MOTION) {
+                targets.forEach(function (el) {el.classList.add('in-view');});
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, {threshold: 0.15});
+            targets.forEach(function (el) {io.observe(el);});
+        })();
+
+        /* ---------- Magnetic buttons + ripple ---------- */
+        (function () {
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (btn) {
+                if (!REDUCED_MOTION) {
+                    btn.addEventListener('mousemove', function (e) {
+                        var r = btn.getBoundingClientRect();
+                        var x = e.clientX - r.left - r.width / 2;
+                        var y = e.clientY - r.top - r.height / 2;
+                        btn.style.transform = 'translate(' + x * 0.18 + 'px,' + (y * 0.35 - 4) + 'px)';
+                    });
+                    btn.addEventListener('mouseleave', function () {
+                        btn.style.transform = '';
+                    });
+                }
+                btn.addEventListener('click', function (e) {
+                    var r = btn.getBoundingClientRect();
+                    var ripple = document.createElement('span');
+                    ripple.className = 'btn-ripple';
+                    ripple.style.left = (e.clientX - r.left) + 'px';
+                    ripple.style.top = (e.clientY - r.top) + 'px';
+                    btn.appendChild(ripple);
+                    setTimeout(function () {ripple.remove();}, 650);
+                });
+            });
+        })();
+
+        /* ---------- 3D tilt on cards ---------- */
+        (function () {
+            if (REDUCED_MOTION) return;
+            var cards = document.querySelectorAll('.project-card, .skill-card, .achievement-card, .unity-card');
+            cards.forEach(function (card) {
+                card.addEventListener('mousemove', function (e) {
+                    var r = card.getBoundingClientRect();
+                    var px = (e.clientX - r.left) / r.width;
+                    var py = (e.clientY - r.top) / r.height;
+                    var rx = (py - 0.5) * -10;
+                    var ry = (px - 0.5) * 10;
+                    card.style.transform = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-8px)';
+                });
+                card.addEventListener('mouseleave', function () {
+                    card.style.transform = '';
+                });
+            });
+        })();
+    </script>
+
+    <script src="ionix.js"></script>
+
+</body>
+
+</html>

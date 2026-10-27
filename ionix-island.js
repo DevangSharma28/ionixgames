@@ -9,7 +9,7 @@
     if (!host || typeof THREE === 'undefined') return;
 
     var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var INK = 0x1E2350;
+    var INK = 0x2F2545;
 
     var renderer;
     try {
@@ -133,10 +133,10 @@
     /* ---------- Palette ---------- */
 
     var C = {
-        grass: 0x6EDB5A, grassDark: 0x4FC04A, dirt: 0xE39A5B, rock1: 0xC77E57, rock2: 0xA9664A, rock3: 0x8E5341,
-        stone: 0xB4BEDA, wood: 0xC98A4B, woodDark: 0x9C6A3A, cream: 0xFFF6E2, berry: 0xFF5C7A, gold: 0xFFC83D,
-        violet: 0x8C6BFF, water: 0x4FCDF2, waterLight: 0x9BE7FF, leaf: 0x5CCB4F, leafLight: 0x86E06A,
-        pine: 0x2FA866, blossom: 0xFFA3C7, white: 0xFFFFFF, warm: 0xFFE08A
+        grass: 0x72D163, grassDark: 0x56B550, dirt: 0xDB9A62, rock1: 0xC77E57, rock2: 0xA9664A, rock3: 0x8E5341,
+        stone: 0xB4BEDA, wood: 0xC98A4B, woodDark: 0x9C6A3A, cream: 0xFFF6E2, berry: 0xFF7A93, gold: 0xFFC24A,
+        violet: 0x8A6FD1, water: 0x5CC6EA, waterLight: 0xA3E3F5, leaf: 0x62C25A, leafLight: 0x8BD873,
+        pine: 0x3A9F6A, blossom: 0xFFADC9, white: 0xFFFFFF, warm: 0xFFE08A
     };
 
     /* ---------- Island terrain ---------- */
@@ -302,7 +302,7 @@
     var roof = prism(2.15, 0.85, 1.6, C.berry);
     at(roof, 0, 1.28, 0, bakery);
     roof.rotation.y = Math.PI / 2;
-    var ridge = part(new THREE.BoxGeometry(0.16, 0.12, 2.2), 0xD93A5A, 0.03);
+    var ridge = part(new THREE.BoxGeometry(0.16, 0.12, 2.2), 0xE0577A, 0.03);
     at(ridge, 0, 2.12, 0, bakery);
     ridge.rotation.y = Math.PI / 2;
     var chimney = new THREE.Group();
@@ -560,7 +560,7 @@
     at(truck, PATH_R, TOP + 0.13, 0, truckPivot);
     at(part(new THREE.BoxGeometry(0.46, 0.4, 0.62), C.berry, 0.03), 0, 0.2, -0.12, truck);
     at(part(new THREE.BoxGeometry(0.44, 0.3, 0.32), C.cream, 0.03), 0, 0.13, 0.36, truck);
-    at(part(new THREE.BoxGeometry(0.38, 0.14, 0.04), 0x9BE7FF, 0.015), 0, 0.22, 0.53, truck);
+    at(part(new THREE.BoxGeometry(0.38, 0.14, 0.04), 0xA3E3F5, 0.015), 0, 0.22, 0.53, truck);
     at(new THREE.Mesh(new THREE.SphereGeometry(0.035, 6, 4), glow(C.warm)), 0.15, 0.06, 0.53, truck);
     at(new THREE.Mesh(new THREE.SphereGeometry(0.035, 6, 4), glow(C.warm)), -0.15, 0.06, 0.53, truck);
     var truckCoin = part(new THREE.CylinderGeometry(0.11, 0.11, 0.03, 14), C.gold, 0.018);

@@ -122,7 +122,7 @@
         var pre = document.getElementById('ix-term-out');
         if (!pre) return;
         var lines = [
-            '<span class="k">$</span> ion init <span class="g">volt-drift</span>',
+            '<span class="k">$</span> ion init <span class="g">juice-king-tycoon</span>',
             '<span class="o">›</span> scaffolding scene graph ......... <span class="g">ok</span>',
             '<span class="o">›</span> compiling shaders (42) .......... <span class="g">ok</span>',
             '<span class="o">›</span> hot-reload bridge ............... <span class="g">live</span>',
@@ -163,6 +163,65 @@
             var s = document.getElementById(id);
             if (s) io.observe(s);
         });
+    })();
+
+    /* ---------- Featured banner: 3D tilt + art parallax ---------- */
+    (function () {
+        var card = document.querySelector('.ix-feature');
+        if (!card || REDUCED || !window.matchMedia('(hover: hover)').matches) return;
+        card.addEventListener('mousemove', function (e) {
+            var r = card.getBoundingClientRect();
+            var px = (e.clientX - r.left) / r.width - 0.5;
+            var py = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = 'perspective(1200px) rotateX(' + (-py * 5) + 'deg) rotateY(' + (px * 5) + 'deg)';
+            card.style.backgroundPosition = (100 - px * 6) + '% ' + (50 - py * 6) + '%';
+        });
+        card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+            card.style.backgroundPosition = '';
+        });
+    })();
+
+    /* ---------- Fruit + coin burst on Play Store clicks ---------- */
+    (function () {
+        if (REDUCED) return;
+        var bits = ['🍊', '🥐', '🍉', '🧁', '🍩', '🪙', '✨'];
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest && e.target.closest('a[href*="play.google.com"]');
+            if (!a) return;
+            for (var i = 0; i < 14; i++) {
+                var s = document.createElement('span');
+                s.className = 'ix-burst';
+                s.textContent = bits[i % bits.length];
+                var ang = Math.random() * Math.PI * 2, d = 70 + Math.random() * 90;
+                s.style.left = e.clientX + 'px';
+                s.style.top = e.clientY + 'px';
+                s.style.setProperty('--dx', Math.cos(ang) * d + 'px');
+                s.style.setProperty('--dy', Math.sin(ang) * d - 40 + 'px');
+                s.style.setProperty('--r', (Math.random() * 360 - 180) + 'deg');
+                document.body.appendChild(s);
+                (function (el) { setTimeout(function () { el.remove(); }, 950); })(s);
+            }
+        });
+    })();
+
+    /* ---------- Pop-in reveal for game showcases ---------- */
+    (function () {
+        var els = document.querySelectorAll('.ix-feature, .ix-game, .project-card, .hero-metric');
+        if (!els.length || REDUCED || !('IntersectionObserver' in window)) return;
+        els.forEach(function (el, i) {
+            el.classList.add('reveal');
+            el.style.transitionDelay = (i % 4) * 80 + 'ms';
+        });
+        var io = new IntersectionObserver(function (en) {
+            en.forEach(function (x) {
+                if (!x.isIntersecting) return;
+                x.target.classList.add('in-view');
+                io.unobserve(x.target);
+                setTimeout(function () { x.target.style.transitionDelay = ''; }, 900);
+            });
+        }, { threshold: 0.15 });
+        els.forEach(function (el) { io.observe(el); });
     })();
 
 })();
