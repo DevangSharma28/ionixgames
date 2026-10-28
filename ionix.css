@@ -1539,3 +1539,48 @@ body::after {
 /* Inline atlas icons */
 .ui-ico { display: inline-block; width: 1.35em; height: 1.35em; object-fit: contain; vertical-align: -.35em; margin-right: .35em; }
 .ix-status .ui-ico, .project-tag .ui-ico { width: 1.2em; height: 1.2em; vertical-align: -.3em; }
+
+/* ---------- Cookie consent banner ---------- */
+
+.ix-consent {
+
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    z-index: 2800;
+    transform: translateX(-50%);
+    width: min(640px, calc(100% - 32px));
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 18px;
+    background: var(--cream);
+    color: var(--ink);
+    border: var(--line) solid var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--pop);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.45;
+    animation: ix-consent-in .45s var(--bounce);
+
+}
+
+.ix-consent p { margin: 0; flex: 1; }
+.ix-consent a { color: var(--violet2); font-weight: 800; }
+.ix-consent-actions { display: flex; gap: 10px; flex-shrink: 0; }
+
+@keyframes ix-consent-in { from { transform: translate(-50%, 30px); opacity: 0; } }
+
+@media (max-width: 560px) {
+
+    .ix-consent { flex-direction: column; align-items: stretch; gap: 12px; }
+    .ix-consent-actions .btn { flex: 1; justify-content: center; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ix-consent { animation: none; }
+
+}

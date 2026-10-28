@@ -2,6 +2,26 @@
 <html lang="en">
 
 <head>
+
+    <!-- Google Analytics 4 — consent banner + custom events live in ionix-analytics.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BS32RXRXR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {dataLayer.push(arguments);}
+        // Site shows no ads: ad storage is always off. Analytics is on, except EEA/UK/CH until the visitor accepts.
+        gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+        gtag('consent', 'default', {
+            ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+            region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']
+        });
+        try {
+            var ixConsent = localStorage.getItem('ix-consent');
+            if (ixConsent) gtag('consent', 'update', {analytics_storage: ixConsent});
+        } catch (e) {}
+        gtag('js', new Date());
+        gtag('config', 'G-9BS32RXRXR');
+    </script>
+    <script src="ionix-analytics.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Privacy Policy | Ionix Studio</title>
@@ -107,7 +127,7 @@
                     <span class="eyebrow">Legal</span>
                     <h2>Privacy Policy</h2>
                     <p>What we collect when you play an Ionix game, why we collect it, and how you stay in control.</p>
-                    <p class="legal-date">Effective date: <time datetime="2026-10-07">October 7, 2026</time></p>
+                    <p class="legal-date">Effective date: <time datetime="2026-10-29">October 29, 2026</time></p>
                 </header>
             </div>
         </section>
@@ -128,6 +148,7 @@
                         <li><a href="#retention">Data retention</a></li>
                         <li><a href="#security">Data security</a></li>
                         <li><a href="#ads">Your advertising choices</a></li>
+                        <li><a href="#website">This website</a></li>
                         <li><a href="#changes">Changes to this policy</a></li>
                         <li><a href="#contact-us">Contact us</a></li>
                     </ol>
@@ -208,7 +229,7 @@
                             <li>Withdraw consent at any time, without affecting earlier processing.</li>
                             <li>Complain to your local data protection authority.</li>
                         </ul>
-                        <p>Players in these regions see a consent prompt before any personalized advertising is shown. To exercise any right, email us using the address in section 12.</p>
+                        <p>Players in these regions see a consent prompt before any personalized advertising is shown. To exercise any right, email us using the address in section 13.</p>
                     </section>
 
                     <section id="children">
@@ -239,14 +260,27 @@
                         <p>You will still see ads, but they will be less relevant to you.</p>
                     </section>
 
-                    <section id="changes">
+                    <section id="website">
                         <span class="legal-num">11</span>
+                        <h3>This website</h3>
+                        <p>When you visit this website (as opposed to playing our games):</p>
+                        <ul class="legal-links">
+                            <li><strong>Google Analytics</strong> — counts visits and records how the site is used: pages viewed, how far you scroll, which buttons and links you click (for example a Google Play link), your approximate country, device and browser type, and the page that referred you. It sets cookies to tell visits apart. IP addresses are not stored. · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a></li>
+                            <li><strong>Google Forms</strong> — receives the name, email address, subject and message you send through our contact form. · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy policy</a></li>
+                            <li><strong>Google Fonts and cdnjs (Cloudflare)</strong> — deliver the site's fonts and 3D library; they receive your IP address as part of the request. · <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare privacy policy</a></li>
+                            <li><strong>Your browser's local storage</strong> — keeps the site's coin counter, whether the intro animation has played, and your cookie choice. This stays on your device and is never sent to us.</li>
+                        </ul>
+                        <p>Visitors in the EU, EEA, UK and Switzerland are not tracked by Google Analytics until they accept the cookie banner. Anyone can change their choice at any time with the <strong>Cookie settings</strong> link at the bottom of every page. The site shows no ads and does not use advertising cookies.</p>
+                    </section>
+
+                    <section id="changes">
+                        <span class="legal-num">12</span>
                         <h3>Changes to this policy</h3>
                         <p>We may update this policy from time to time. When we do, we will change the effective date at the top of this page. Continuing to play our games after an update means you accept the revised policy.</p>
                     </section>
 
                     <section id="contact-us">
-                        <span class="legal-num">12</span>
+                        <span class="legal-num">13</span>
                         <h3>Contact us</h3>
                         <p>Questions, requests or concerns about your privacy:</p>
                         <ul class="legal-links">

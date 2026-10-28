@@ -2,6 +2,26 @@
 <html lang="en">
 
 <head>
+
+    <!-- Google Analytics 4 — consent banner + custom events live in ionix-analytics.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BS32RXRXR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {dataLayer.push(arguments);}
+        // Site shows no ads: ad storage is always off. Analytics is on, except EEA/UK/CH until the visitor accepts.
+        gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+        gtag('consent', 'default', {
+            ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+            region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']
+        });
+        try {
+            var ixConsent = localStorage.getItem('ix-consent');
+            if (ixConsent) gtag('consent', 'update', {analytics_storage: ixConsent});
+        } catch (e) {}
+        gtag('js', new Date());
+        gtag('config', 'G-9BS32RXRXR');
+    </script>
+    <script src="ionix-analytics.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Games | Ionix Studio</title>

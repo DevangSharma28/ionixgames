@@ -732,6 +732,7 @@
         if (pick(e, island)) {
             squash = 1;
             if (window.ixAddCoins) window.ixAddCoins(25, e.clientX, e.clientY);
+            if (window.ixTrack) window.ixTrack('island_tap', {}, true);
         }
     });
 
