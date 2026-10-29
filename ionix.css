@@ -1584,3 +1584,92 @@ body::after {
     .ix-consent { animation: none; }
 
 }
+
+/* Games page poster: first thing on the page */
+#featured-poster { padding: 40px 0 0; }
+#featured-poster + .page-header { padding-top: 70px; padding-bottom: 30px; }
+#featured-poster ~ #games-grid { padding-top: 20px; }
+
+.ix-poster {
+
+    position: relative;
+    display: block;
+    border: var(--line) solid var(--ink);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--pop);
+    text-decoration: none;
+    transition: transform .3s var(--bounce), box-shadow .3s var(--bounce);
+
+}
+
+.ix-poster > img { display: block; width: 100%; height: auto; transition: transform .6s ease; }
+.ix-poster:hover { transform: translateY(-4px); box-shadow: 0 10px 0 var(--ink); }
+.ix-poster:hover > img { transform: scale(1.03); }
+
+.ix-poster-info {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 70px 30px 26px;
+    background: linear-gradient(0deg, rgba(47, 37, 69, .9) 0%, rgba(47, 37, 69, .55) 55%, transparent 100%);
+
+}
+
+.ix-poster-hook { color: #fff; font-family: var(--display); font-size: clamp(20px, 2.2vw, 28px); line-height: 1.2; text-shadow: 0 2px 0 var(--ink); }
+.ix-poster-tag { display: block; width: max-content; margin-bottom: 8px; padding: 4px 12px 3px; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; background: var(--berry); border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 0 3px 0 var(--ink); }
+
+.ix-poster-cta {
+
+    flex-shrink: 0;
+    font-size: 22px;
+    padding: 16px 34px 14px;
+    animation: btnShine 3.6s ease-in-out infinite, playPulse 1.5s ease-in-out infinite;
+
+}
+
+@keyframes playPulse {
+
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+    50% { transform: scale(1.07); filter: drop-shadow(0 0 14px rgba(255, 245, 200, .9)); }
+
+}
+
+.ix-poster:hover .ix-poster-cta { animation-play-state: paused; transform: scale(1.1); }
+
+@media (max-width: 760px) {
+
+    #featured-poster { padding-top: 24px; }
+    #featured-poster + .page-header { padding-top: 50px; }
+    .ix-poster { border-radius: 20px; }
+    .ix-poster-info { position: static; flex-direction: column; align-items: stretch; gap: 14px; padding: 18px; background: var(--ink); }
+    .ix-poster-hook { font-size: 19px; }
+    .ix-poster-cta { justify-content: center; font-size: 18px; padding: 13px 20px 11px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ix-poster-cta { animation: none; }
+
+}
+
+/* No sideways drag on phones: tilted ticker and drifting clouds are wider than the screen */
+html, body { overflow-x: clip; }
+
+/* Header must stack above <main> (both z-index 1 in style.css) or the dropdown slides under the page */
+header { z-index: 10; }
+
+/* Mobile menu: base style.css hides the dropdown with display:none and never shows it */
+@media (max-width: 760px) {
+
+    .nav-dropdown { display: block; visibility: hidden; transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s; }
+    .nav-dropdown.open { visibility: visible; transition: opacity .25s ease, transform .25s ease; }
+
+}
