@@ -41,7 +41,7 @@ jobs:
           mkdir -p _site/Games _site/UIAtlas _site/LOGO
           cp -R Games/web _site/Games/
           cp -R UIAtlas/web _site/UIAtlas/
-          cp LOGO/logo.png LOGO/favicon.png LOGO/apple-touch-icon.png _site/LOGO/
+          cp LOGO/logo.png LOGO/favicon.png LOGO/apple-touch-icon.png LOGO/social-card.jpg _site/LOGO/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
