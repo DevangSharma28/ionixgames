@@ -33,11 +33,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build site folder
+        # Publish only what pages load: source art (full-size PNGs, atlas) stays in the repo
+        run: |
+          mkdir _site
+          cp *.html *.css *.js robots.txt sitemap.xml _site/
+          mkdir -p _site/Games _site/UIAtlas _site/LOGO
+          cp -R Games/web _site/Games/
+          cp -R UIAtlas/web _site/UIAtlas/
+          cp LOGO/logo.png LOGO/favicon.png LOGO/apple-touch-icon.png _site/LOGO/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
