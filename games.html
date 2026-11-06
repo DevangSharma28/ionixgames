@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Google Analytics 4 — consent banner + custom events live in ionix-analytics.js -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BS32RXRXR"></script>
@@ -22,8 +24,6 @@
         gtag('config', 'G-9BS32RXRXR');
     </script>
     <script src="ionix-analytics.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Games | Ionix Studio</title>
     <meta name="description" content="Games shipped and in development by Ionix Studio.">
     <link rel="canonical" href="https://devangsharma28.github.io/ionixgames/games.html">
@@ -153,7 +153,7 @@
                     <article class="project-card project-card-text">
                         <div class="game-art">
                             <img class="game-bg" src="Games/web/juice-king-tycoon-art-800.jpg" srcset="Games/web/juice-king-tycoon-art-800.jpg 800w, Games/web/juice-king-tycoon-art.jpg 1100w" sizes="(max-width: 760px) 100vw, 600px" alt="" width="800" height="450" loading="lazy" decoding="async">
-                            <img class="game-logo" src="Games/web/juice-king-tycoon-logo.png" alt="Juice King Tycoon logo" loading="lazy" decoding="async">
+                            <img class="game-logo" src="Games/web/juice-king-tycoon-logo.png" alt="Juice King Tycoon logo" width="520" height="260" loading="lazy" decoding="async">
                         </div>
                         <div class="project-body">
                             <span class="project-tag">Idle Tycoon · Live</span>
@@ -166,7 +166,7 @@
                     <article class="project-card project-card-text">
                         <div class="game-art">
                             <img class="game-bg" src="Games/web/idle-bakery-cafe-art-800.jpg" srcset="Games/web/idle-bakery-cafe-art-800.jpg 800w, Games/web/idle-bakery-cafe-art.jpg 1100w" sizes="(max-width: 760px) 100vw, 600px" alt="" width="800" height="450" loading="lazy" decoding="async">
-                            <img class="game-logo" src="Games/web/idle-bakery-cafe-logo.png" alt="Idle Bakery Cafe logo" loading="lazy" decoding="async">
+                            <img class="game-logo" src="Games/web/idle-bakery-cafe-logo.png" alt="Idle Bakery Cafe logo" width="520" height="264" loading="lazy" decoding="async">
                         </div>
                         <div class="project-body">
                             <span class="project-tag">Idle Tycoon · Live</span>
@@ -179,7 +179,7 @@
                     <article class="project-card project-card-text">
                         <div class="game-art">
                             <img class="game-bg" src="Games/web/port-empire-cargo-tycoon-art-800.jpg" srcset="Games/web/port-empire-cargo-tycoon-art-800.jpg 800w, Games/web/port-empire-cargo-tycoon-art.jpg 1100w" sizes="(max-width: 760px) 100vw, 600px" alt="" width="800" height="450" loading="lazy" decoding="async">
-                            <img class="game-logo" src="Games/web/port-empire-cargo-tycoon-logo.png" alt="Port Empire Cargo Tycoon logo" loading="lazy" decoding="async">
+                            <img class="game-logo" src="Games/web/port-empire-cargo-tycoon-logo.png" alt="Port Empire Cargo Tycoon logo" width="520" height="260" loading="lazy" decoding="async">
                         </div>
                         <div class="project-body">
                             <span class="project-tag">Idle Tycoon · Coming Soon</span>
@@ -228,6 +228,7 @@
 
     <script>
         var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var CAN_HOVER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
         /* ---------- Mobile nav dropdown ---------- */
         (function () {
@@ -313,7 +314,7 @@
         (function () {
             var buttons = document.querySelectorAll('.btn');
             buttons.forEach(function (btn) {
-                if (!REDUCED_MOTION) {
+                if (!REDUCED_MOTION && CAN_HOVER) {
                     btn.addEventListener('mousemove', function (e) {
                         var r = btn.getBoundingClientRect();
                         var x = e.clientX - r.left - r.width / 2;
@@ -338,7 +339,7 @@
 
         /* ---------- 3D tilt on cards ---------- */
         (function () {
-            if (REDUCED_MOTION) return;
+            if (REDUCED_MOTION || !CAN_HOVER) return;
             var cards = document.querySelectorAll('.project-card, .skill-card, .achievement-card, .unity-card');
             cards.forEach(function (card) {
                 card.addEventListener('mousemove', function (e) {
@@ -356,7 +357,7 @@
         })();
     </script>
 
-    <script src="ionix.js"></script>
+    <script src="ionix.js" defer></script>
 
 </body>
 

@@ -1674,3 +1674,50 @@ header { z-index: 10; }
     .nav-dropdown.open { visibility: visible; transition: opacity .25s ease, transform .25s ease; }
 
 }
+
+/* ---------- Phones & touch ---------- */
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-x: clip; }
+
+/* No 300ms tap delay / double-tap zoom on controls; gold tap flash instead of grey */
+a, button, .btn, input, textarea, select, .demo-coin, .ix-pill {
+
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255, 194, 74, .35);
+
+}
+
+/* Mini-game: no text selection / callout when mashing coins */
+.demo-stage, .phone-screen {
+
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+
+}
+
+/* Finger-sized targets */
+@media (pointer: coarse) {
+
+    .btn-small { min-height: 44px; }
+    .ix-pill { height: 44px; }
+    .nav-dropdown ul a { padding-top: 12px; padding-bottom: 12px; }
+
+}
+
+@media (max-width: 760px) {
+
+    /* 16px+ stops iOS from zooming the page when a field is focused */
+    input, textarea, select { font-size: 16px !important; }
+
+    /* Fixed full-screen animation keeps the GPU busy on phones: hold it still */
+    body::after { animation: none; opacity: .55; }
+
+    .legal-body li { padding-top: 4px; padding-bottom: 4px; }
+
+    /* Keep content clear of the iPhone home bar / notch */
+    footer .container { padding-bottom: env(safe-area-inset-bottom); }
+    .ix-consent { bottom: calc(14px + env(safe-area-inset-bottom)); }
+
+}

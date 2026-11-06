@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <!-- Google Analytics 4 — consent banner + custom events live in ionix-analytics.js -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BS32RXRXR"></script>
@@ -22,8 +24,6 @@
         gtag('config', 'G-9BS32RXRXR');
     </script>
     <script src="ionix-analytics.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Ionix | Independent Game Studio</title>
     <meta name="description" content="Ionix is an independent game studio building original games — and Ion Engine, the in-house engine behind them, coming soon to other creators.">
     <link rel="canonical" href="https://devangsharma28.github.io/ionixgames/">
@@ -331,6 +331,7 @@
 
     <script>
         var REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var CAN_HOVER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
         /* ---------- Mobile nav dropdown ---------- */
         (function () {
@@ -416,7 +417,7 @@
         (function () {
             var buttons = document.querySelectorAll('.btn');
             buttons.forEach(function (btn) {
-                if (!REDUCED_MOTION) {
+                if (!REDUCED_MOTION && CAN_HOVER) {
                     btn.addEventListener('mousemove', function (e) {
                         var r = btn.getBoundingClientRect();
                         var x = e.clientX - r.left - r.width / 2;
@@ -441,7 +442,7 @@
 
         /* ---------- 3D tilt on cards ---------- */
         (function () {
-            if (REDUCED_MOTION) return;
+            if (REDUCED_MOTION || !CAN_HOVER) return;
             var cards = document.querySelectorAll('.project-card, .skill-card, .achievement-card, .unity-card');
             cards.forEach(function (card) {
                 card.addEventListener('mousemove', function (e) {
@@ -631,9 +632,9 @@
         })();
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="ionix.js"></script>
-    <script src="ionix-island.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="ionix.js" defer></script>
+    <script src="ionix-island.js" defer></script>
 
 </body>
 

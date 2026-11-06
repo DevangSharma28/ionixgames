@@ -11,12 +11,15 @@
     var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var INK = 0x2F2545;
 
+    // Phones/tablets: lighter render settings (no MSAA, smaller shadow map, lower pixel ratio)
+    var LOW_POWER = window.matchMedia('(pointer: coarse)').matches || Math.min(screen.width, screen.height) < 600;
+
     var renderer;
     try {
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer = new THREE.WebGLRenderer({ antialias: !LOW_POWER, alpha: true });
     } catch (e) { return; }
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, LOW_POWER ? 1.5 : 2));
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     host.appendChild(renderer.domElement);
@@ -34,7 +37,7 @@
     var sun = new THREE.DirectionalLight(0xFFF1D6, 0.95);
     sun.position.set(7, 13, 9);
     sun.castShadow = true;
-    sun.shadow.mapSize.set(2048, 2048);
+    sun.shadow.mapSize.set(LOW_POWER ? 1024 : 2048, LOW_POWER ? 1024 : 2048);
     sun.shadow.camera.left = -8;
     sun.shadow.camera.right = 8;
     sun.shadow.camera.top = 8;
