@@ -150,6 +150,26 @@
         }
     });
 
+    /* ---------- Featured posters (game art on Games page, featured banner on Home) ---------- */
+    // Posters aren't links, so clicks on their buttons are already counted as
+    // play_store_click / cta_click. This only counts taps on the art itself.
+
+    document.addEventListener('click', function (e) {
+        var poster = e.target.closest && e.target.closest('.game-art, .ix-feature');
+        if (!poster || e.target.closest('a, button')) return;
+
+        var card = poster.closest('.project-card');
+        var title = card && card.querySelector('h3');
+        var logo = poster.querySelector('img[alt]');
+        var game = title ? title.textContent.trim() : (logo ? logo.alt.trim() : 'unknown');
+
+        track('featured_poster_click', {
+            game: game,
+            poster: poster.classList.contains('ix-feature') ? 'home_banner' : 'games_page',
+            link_location: linkLocation(poster)
+        });
+    });
+
     /* ---------- Site toys ---------- */
 
     document.addEventListener('click', function (e) {
