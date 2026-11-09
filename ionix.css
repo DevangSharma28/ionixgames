@@ -538,7 +538,7 @@ input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 4px
 
     width: 30px;
     height: 30px;
-    background: url('UIAtlas/web/coin.png') center / contain no-repeat;
+    background: url('UIAtlas/web/coin.webp') center / contain no-repeat;
 
 }
 
@@ -547,7 +547,7 @@ input:focus, textarea:focus, select:focus { outline: none; box-shadow: 0 0 0 4px
 
     width: 28px;
     height: 28px;
-    background: url('UIAtlas/web/gem.png') center / contain no-repeat;
+    background: url('UIAtlas/web/gem.webp') center / contain no-repeat;
 
 }
 
@@ -835,9 +835,9 @@ footer a { color: var(--gold); text-decoration: none; border-bottom: 2px solid v
 
 }
 
-.ix-metrics .hero-metric:nth-child(1)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/gamepad.png'); background-size: 78%; }
-.ix-metrics .hero-metric:nth-child(2)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/trophy.png'); background-size: 78%; }
-.ix-metrics .hero-metric:nth-child(3)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/web.png'); background-size: 78%; }
+.ix-metrics .hero-metric:nth-child(1)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/gamepad.webp'); background-size: 78%; }
+.ix-metrics .hero-metric:nth-child(2)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/trophy.webp'); background-size: 78%; }
+.ix-metrics .hero-metric:nth-child(3)::before { background-color: var(--cream2); background-image: url('UIAtlas/web/web.webp'); background-size: 78%; }
 
 .ix-metrics h3 {
 
