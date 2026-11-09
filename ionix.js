@@ -23,7 +23,7 @@
         var boot = document.createElement('div');
         boot.className = 'ix-boot';
         boot.setAttribute('aria-hidden', 'true');
-        boot.innerHTML = '<div class="ix-boot-pct">0%</div><div class="ix-boot-bar"><i></i></div><div>Building your island…</div>';
+        boot.innerHTML = '<div class="ix-boot-pct">0%</div><div class="ix-boot-bar"><i></i></div><div>Building your port…</div>';
         document.body.appendChild(boot);
 
         var pct = boot.querySelector('.ix-boot-pct');
