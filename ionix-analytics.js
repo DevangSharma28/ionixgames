@@ -84,7 +84,8 @@
 
     var GAMES = {
         'com.ionixgames.juicekingtycoon': 'Juice King Tycoon',
-        'com.ionixgames.idlebakerycafe': 'Idle Bakery Cafe'
+        'com.ionixgames.idlebakerycafe': 'Idle Bakery Cafe',
+        'com.ionixgames.portempire': 'Port Empire Cargo Tycoon'
     };
 
     var SOCIAL = [
@@ -150,24 +151,33 @@
         }
     });
 
-    /* ---------- Featured posters (game art on Games page, featured banner on Home) ---------- */
-    // Posters aren't links, so clicks on their buttons are already counted as
-    // play_store_click / cta_click. This only counts taps on the art itself.
+    /* ---------- Featured games: banner/poster art AND its buttons ---------- */
+    // One event, featured_poster_click, for every click inside a featured game:
+    //   poster: home_banner | games_page_featured | games_page (game card art)
+    //   click_target: art | poster | play_button | other_button
+    // Links inside still send play_store_click / cta_click too.
 
     document.addEventListener('click', function (e) {
-        var poster = e.target.closest && e.target.closest('.game-art, .ix-feature');
-        if (!poster || e.target.closest('a, button')) return;
+        var box = e.target.closest && e.target.closest('.ix-poster, .ix-feature, .game-art');
+        if (!box) return;
 
-        var card = poster.closest('.project-card');
-        var title = card && card.querySelector('h3');
-        var logo = poster.querySelector('img[alt]');
-        var game = title ? title.textContent.trim() : (logo ? logo.alt.trim() : 'unknown');
+        var a = e.target.closest('a[href], button');
+        var kind, game, target;
 
-        track('featured_poster_click', {
-            game: game,
-            poster: poster.classList.contains('ix-feature') ? 'home_banner' : 'games_page',
-            link_location: linkLocation(poster)
-        });
+        if (box.classList.contains('ix-poster')) {
+            kind = 'games_page_featured';
+            game = box.getAttribute('data-game') || 'unknown';
+            target = 'poster';
+        } else {
+            var card = box.closest('.project-card');
+            var title = card && card.querySelector('h3');
+            var logo = box.querySelector('img[alt]');
+            kind = box.classList.contains('ix-feature') ? 'home_banner' : 'games_page';
+            game = title ? title.textContent.trim() : (logo ? logo.alt.trim() : 'unknown');
+            target = !a ? 'art' : (a.hostname === 'play.google.com' ? 'play_button' : 'other_button');
+        }
+
+        track('featured_poster_click', { game: game, poster: kind, click_target: target, link_location: linkLocation(box) });
     });
 
     /* ---------- Site toys ---------- */

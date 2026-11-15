@@ -1721,3 +1721,25 @@ a, button, .btn, input, textarea, select, .demo-coin, .ix-pill {
     .ix-consent { bottom: calc(14px + env(safe-area-inset-bottom)); }
 
 }
+
+/* Featured poster: game logo pinned over the art */
+.ix-poster > .ix-poster-logo {
+
+    position: absolute;
+    top: 4%;
+    left: 3%;
+    width: min(34%, 400px);
+    height: auto;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .45));
+    transition: none;
+    pointer-events: none;
+
+}
+
+.ix-poster:hover > .ix-poster-logo { transform: none; }
+
+@media (max-width: 760px) {
+
+    .ix-poster > .ix-poster-logo { top: 5%; left: 4%; width: 52%; }
+
+}
