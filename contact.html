@@ -128,7 +128,7 @@
             <div class="container">
                 <header class="section-header">
                     <span class="eyebrow">Contact</span>
-                    <h2>Contact Us</h2>
+                    <h1>Contact Us</h1>
                     <p>Press, publishing, collaboration, bug reports, or just saying hi — we read every message.</p>
                 </header>
             </div>
@@ -136,22 +136,31 @@
 
         <section id="contact-main">
             <div class="container contact-layout">
-                <form class="card contact-form" style="padding:34px;" action="https://docs.google.com/forms/d/e/1FAIpQLSc4_Qw2KqXHy-ui5gngJ01LBbHH6DqekpRx41ofaiOE5l0uGQ/formResponse" method="post" id="contact-form">
+                <form class="card contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc4_Qw2KqXHy-ui5gngJ01LBbHH6DqekpRx41ofaiOE5l0uGQ/formResponse" method="post" id="contact-form">
+                    <h2 class="ix-cardbar ix-cardbar-grass">Send A Message</h2>
                     <div class="form-row">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="entry.1112759050" placeholder="Your name" required>
+                        <input type="text" id="name" name="entry.1112759050" placeholder="Your name" autocomplete="name" required>
                     </div>
                     <div class="form-row">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="entry.204561718" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="entry.204561718" placeholder="you@example.com" autocomplete="email" required>
                     </div>
+                    <fieldset class="ix-topics">
+                        <legend>What's it about?</legend>
+                        <button type="button" data-topic="Publishing">Publishing</button>
+                        <button type="button" data-topic="Press">Press</button>
+                        <button type="button" data-topic="Collaboration">Collaboration</button>
+                        <button type="button" data-topic="Bug report">Bug report</button>
+                        <button type="button" data-topic="Ion Engine early access">Ion Engine</button>
+                    </fieldset>
                     <div class="form-row">
                         <label for="subject">Subject</label>
                         <input type="text" id="subject" name="entry.1647930589" placeholder="What's this about?" required>
                     </div>
                     <div class="form-row">
                         <label for="message">Message</label>
-                        <textarea id="message" name="entry.955963655" placeholder="Tell us what's on your mind..." required></textarea>
+                        <textarea id="message" name="entry.955963655" placeholder="Tell us what's on your mind..." minlength="10" required></textarea>
                     </div>
                     <!-- Bot trap: hidden from people, bots fill it -->
                     <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
@@ -163,20 +172,13 @@
                 </form>
 
                 <div class="contact-side">
-                    <article class="card">
-                        <span class="eyebrow">Reach Us Directly</span>
+                    <article class="card ix-direct">
+                        <h2 class="ix-cardbar">Reach Us Directly</h2>
                         <ul class="info-list" style="margin-top:18px;">
-                            <li><span class="info-label">Email</span><span class="info-value">ionixgames26@gmail.com</span></li>
+                            <li><span class="info-label">Email</span><a class="info-value" href="mailto:ionixgames26@gmail.com">ionixgames26@gmail.com</a></li>
                             <li><span class="info-label">Response Time</span><span class="info-value">Within 2–3 business days</span></li>
                         </ul>
                     </article>
-
-                    <a href="#" class="card contact-card">
-                        <div class="contact-card-icon"><img src="UIAtlas/web/discord.webp" alt="" width="64" height="64"></div>
-                        <h3>Discord</h3>
-                        <p>Join the community and talk to the team directly.</p>
-                        <span class="contact-card-link">Join server →</span>
-                    </a>
 
                     <a href="https://www.instagram.com/ionix_games.in/" class="card contact-card" target="_blank" rel="noopener">
                         <div class="contact-card-icon"><img src="UIAtlas/web/instagram.webp" alt="" width="64" height="64"></div>
@@ -188,26 +190,44 @@
             </div>
         </section>
 
-        <section id="social">
-            <div class="container">
-                <header class="section-header">
-                    <span class="eyebrow">Elsewhere</span>
-                    <h2>Find Us Online</h2>
-                </header>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20">Instagram</a>
-                    <a href="mailto:ionixgames26@gmail.com"><img class="ui-ico" src="UIAtlas/web/email.webp" alt="" width="20" height="20">Email</a>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer>
 
         <div class="container">
 
-            <p>© 2026 Ionix Studio. All rights reserved. · <a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.webp" alt="" width="20" height="20">Juice King Tycoon on Google Play</a> · <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20">Instagram</a> · <a href="privacy.html">Privacy Policy</a></p>
+            <div class="ix-foot">
+                <div class="ix-foot-brand">
+                    <a href="index.html" aria-label="iONiX Games home"><img src="LOGO/logo.webp" alt="iONiX Games" width="360" height="180" loading="lazy"></a>
+                    <span>Independent game studio · idle tycoon games for mobile and web.</span>
+                </div>
+                <nav class="ix-foot-col" aria-label="Our games">
+                    <h2>Play</h2>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.portempire&amp;pcampaignid=web_share" target="_blank" rel="noopener">Port Empire Cargo Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener">Juice King Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.idlebakerycafe" target="_blank" rel="noopener">Idle Bakery Cafe</a></li>
+                        <li><a href="games.html">All games</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Studio">
+                    <h2>Studio</h2>
+                    <ul>
+                        <li><a href="ion-engine.html">Ion Engine</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Follow">
+                    <h2>Say hi</h2>
+                    <ul>
+                        <li><a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20" loading="lazy">Instagram</a></li>
+                        <li><a href="mailto:ionixgames26@gmail.com"><img class="ui-ico" src="UIAtlas/web/email.webp" alt="" width="20" height="20" loading="lazy">Email us</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <p class="ix-foot-legal">© 2026 iONiX Games. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
 
         </div>
 
@@ -220,28 +240,48 @@
             var status = document.getElementById('form-status');
             if (!form) return;
             var loadedAt = Date.now();
+            var subject = document.getElementById('subject');
+            var topics = form.querySelectorAll('[data-topic]');
+            function pick(t) {
+                topics.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-topic') === t)); });
+            }
+            topics.forEach(function (b) {
+                b.setAttribute('aria-pressed', 'false');
+                b.addEventListener('click', function () {
+                    var t = b.getAttribute('data-topic');
+                    subject.value = t + ': ';
+                    pick(t);
+                    subject.focus();
+                });
+            });
+            var pre = new URLSearchParams(location.search).get('subject');
+            if (pre) { subject.value = pre.slice(0, 120); pick(pre); }
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var data = new FormData(form);
                 // Bots fill the hidden field or submit instantly: fake success, send nothing
                 if (data.get('website') || Date.now() - loadedAt < 3000) {
                     form.reset();
-                    status.textContent = 'Thanks! Your message is on its way — we reply within 2–3 business days.';
+                    status.textContent = 'Message submitted. If you don\'t hear back within 3 business days, email ionixgames26@gmail.com.';
                     return;
                 }
                 data.delete('website');
                 var btn = form.querySelector('button[type="submit"]');
                 btn.disabled = true;
                 status.textContent = 'Sending…';
+                status.dataset.state = 'busy';
                 // Google Forms sends no CORS headers: response is opaque, so only network failure is detectable
                 fetch(form.action, {method: 'POST', mode: 'no-cors', body: data})
                     .then(function () {
                         form.reset();
-                        status.textContent = 'Thanks! Your message is on its way — we reply within 2–3 business days.';
+                        status.textContent = 'Message submitted. We can\'t confirm delivery from this page, so if you don\'t hear back within 3 business days, email ionixgames26@gmail.com.';
+                        status.dataset.state = 'ok';
+                        pick('');
                         if (window.ixTrack) ixTrack('generate_lead', {form_name: 'contact'});
                     })
                     .catch(function () {
-                        status.textContent = 'Could not send. Please email us at ionixgames26@gmail.com.';
+                        status.textContent = 'Could not send — check your connection, or email us at ionixgames26@gmail.com.';
+                        status.dataset.state = 'error';
                         if (window.ixTrack) ixTrack('contact_form_error', {form_name: 'contact'});
                     })
                     .then(function () {btn.disabled = false;});

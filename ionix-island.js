@@ -14,7 +14,10 @@
 (function () {
 
     var host = document.getElementById('ix-world');
-    if (!host || typeof THREE === 'undefined') return;
+    if (!host) return;
+    // No three.js (CDN blocked) or no WebGL: show the Port Empire art instead of an empty hero
+    function fallback() { host.classList.add('ix-world-fallback'); }
+    if (typeof THREE === 'undefined') { fallback(); return; }
 
     var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var INK = 0x2F2545;
@@ -25,7 +28,7 @@
     var renderer;
     try {
         renderer = new THREE.WebGLRenderer({ antialias: !LOW_POWER, alpha: true });
-    } catch (e) { return; }
+    } catch (e) { fallback(); return; }
 
     var MAX_DPR = Math.min(window.devicePixelRatio || 1, LOW_POWER ? 1.5 : 2);
     var dpr = MAX_DPR;
@@ -45,9 +48,9 @@
 
     /* ---------- Lighting ---------- */
 
-    world.add(new THREE.HemisphereLight(0xEAF6FF, 0xF6D9B0, 0.62));
+    world.add(new THREE.HemisphereLight(0xEFE8FF, 0xFFDDB8, 0.66));
 
-    var sun = new THREE.DirectionalLight(0xFFF1D6, 0.95);
+    var sun = new THREE.DirectionalLight(0xFFEBC8, 1.0);
     sun.position.set(9, 15, 5);
     sun.castShadow = true;
     sun.shadow.mapSize.set(LOW_POWER ? 1024 : 2048, LOW_POWER ? 1024 : 2048);
@@ -58,7 +61,7 @@
     world.add(sun);
     world.add(sun.target);
 
-    var fill = new THREE.DirectionalLight(0xB8C8FF, 0.25);
+    var fill = new THREE.DirectionalLight(0xC9B8FF, 0.38);
     fill.position.set(-8, 4, -6);
     world.add(fill);
 
@@ -1286,8 +1289,8 @@
 
     /* ---------- Layout + interaction ---------- */
 
-    // Matches the CSS breakpoint where the canvas moves below the headline
-    var STACKED = window.matchMedia('(max-width: 760px)');
+    // Matches the CSS breakpoint where the canvas moves below the headline (tablets too)
+    var STACKED = window.matchMedia('(max-width: 1024px)');
 
     function resize() {
         var w = host.clientWidth, h = host.clientHeight;

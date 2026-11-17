@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Google Analytics 4 — consent banner + custom events live in ionix-analytics.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BS32RXRXR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {dataLayer.push(arguments);}
+        // Site shows no ads: ad storage is always off. Analytics is on, except EEA/UK/CH until the visitor accepts.
+        gtag('consent', 'default', {ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted'});
+        gtag('consent', 'default', {
+            ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied',
+            region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']
+        });
+        try {
+            var ixConsent = localStorage.getItem('ix-consent');
+            if (ixConsent) gtag('consent', 'update', {analytics_storage: ixConsent});
+        } catch (e) {}
+        gtag('js', new Date());
+        gtag('config', 'G-9BS32RXRXR');
+    </script>
+    <script src="ionix-analytics.js" defer></script>
+    <title>Juice King Tycoon | iONiX Games</title>
+    <meta name="description" content="Juice King Tycoon — a free idle tycoon game by iONiX Games, live on Google Play. Build your juice empire — squeeze, sell, upgrade, and grow from a single stand into a juice king.">
+    <link rel="canonical" href="https://devangsharma28.github.io/ionixgames/juice-king-tycoon.html">
+    <meta property="og:site_name" content="iONiX Games">
+    <meta property="og:title" content="Juice King Tycoon | iONiX Games">
+    <meta property="og:description" content="Juice King Tycoon — a free idle tycoon game by iONiX Games, live on Google Play. Build your juice empire — squeeze, sell, upgrade, and grow from a single stand into a juice king.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devangsharma28.github.io/ionixgames/juice-king-tycoon.html">
+    <meta property="og:image" content="https://devangsharma28.github.io/ionixgames/Games/web/juice-king-tycoon-art.webp">
+    <meta property="og:image:alt" content="Juice King Tycoon key art — a tropical juice farm by the sea">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#07060D">
+
+    <link rel="icon" type="image/png" href="LOGO/favicon.png">
+    <link rel="apple-touch-icon" href="LOGO/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@500..900&display=swap">
+    <link rel="preload" as="image" href="Games/web/juice-king-tycoon-art.webp" imagesrcset="Games/web/juice-king-tycoon-art-800.webp 800w, Games/web/juice-king-tycoon-art.webp 1100w" imagesizes="(max-width: 760px) 100vw, 1200px" fetchpriority="high">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ionix.css">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Juice King Tycoon", "operatingSystem": "ANDROID", "applicationCategory": "GameApplication", "url": "https://devangsharma28.github.io/ionixgames/juice-king-tycoon.html", "installUrl": "https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon", "image": "https://devangsharma28.github.io/ionixgames/Games/web/juice-king-tycoon-art.webp", "description": "Build your juice empire \u2014 squeeze, sell, upgrade, and grow from a single stand into a juice king.", "author": {"@type": "Organization", "name": "iONiX Games"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Ambient background -->
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+
+    <header id="home">
+
+        <nav class="navbar">
+
+            <div class="container">
+
+                <a href="index.html" class="brand" aria-label="Ionix home">
+                    <img class="brand-logo" src="LOGO/logo.webp" alt="iONiX Games" width="360" height="180">
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+                <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-dropdown">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+            <div class="nav-dropdown" id="nav-dropdown">
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="ion-engine.html">Ion Engine</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-dropdown-actions">
+
+                    <a href="games.html" class="btn btn-outline btn-small">View Games</a>
+
+                    <a href="contact.html" class="btn btn-primary btn-small">Get In Touch</a>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section id="game-hero" class="ix-gh">
+            <div class="container">
+                <nav class="ix-crumbs" aria-label="Breadcrumb"><a href="games.html">Games</a> <span aria-hidden="true">›</span> <span aria-current="page">Juice King Tycoon</span></nav>
+                <div class="ix-gh-stage">
+                    <img class="ix-gh-bg" src="Games/web/juice-king-tycoon-art.webp" srcset="Games/web/juice-king-tycoon-art-800.webp 800w, Games/web/juice-king-tycoon-art.webp 1100w" sizes="(max-width: 760px) 100vw, 1200px" alt="Juice King Tycoon key art — a tropical juice farm by the sea" width="1100" height="619" fetchpriority="high" decoding="async">
+                    <div class="ix-gh-body">
+                        <img class="ix-gh-icon" src="Games/web/juice-king-tycoon-icon.webp" alt="" width="160" height="160">
+                        <h1><img class="ix-gh-logo" src="Games/web/juice-king-tycoon-logo.webp" alt="Juice King Tycoon" width="520" height="260"></h1>
+                        <span class="ix-status"><img class="ui-ico" src="UIAtlas/web/live.webp" alt="" width="20" height="20">Live · Free to play</span>
+                        <p>Build your juice empire — squeeze, sell, upgrade, and grow from a single stand into a juice king.</p>
+                        <div class="hero-actions"><a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" class="btn btn-green" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.webp" alt="" width="20" height="20">Get It On Google Play <span class="arrow">→</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-loop">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">How It Plays</span>
+                    <h2>The <span class="outline-text">loop</span></h2>
+                </header>
+                <div class="ix-goals ix-loop">
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/play.webp" alt="" width="48" height="48" loading="lazy">
+                        <h3>Squeeze</h3>
+                        <p>Turn fresh fruit into juice at your very first stand.</p>
+                    </article>
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/coin.webp" alt="" width="48" height="48" loading="lazy">
+                        <h3>Sell</h3>
+                        <p>Serve customers and watch the coins roll in.</p>
+                    </article>
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/trophy.webp" alt="" width="48" height="48" loading="lazy">
+                        <h3>Upgrade &amp; grow</h3>
+                        <p>Reinvest to grow from a single stand into a juice king.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-art">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Key Art</span>
+                    <h2>Take a <span class="outline-text">look</span></h2>
+                    <p>Official key art for Juice King Tycoon. For gameplay, grab it free from the store.</p>
+                </header>
+                <div class="ix-gallery">
+                    <figure class="ix-shot"><img src="Games/web/juice-king-tycoon-art.webp" alt="Juice King Tycoon key art — a tropical juice farm by the sea" width="1100" height="619" loading="lazy" decoding="async"></figure>
+                    <figure class="ix-shot ix-shot-alt"><img src="Games/web/juice-king-tycoon-key-2.webp" alt="Juice King key art — a farmer harvesting watermelons for juice" width="900" height="900" loading="lazy" decoding="async"></figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-get" class="ix-cta">
+            <div class="container">
+                <span class="eyebrow">Free To Play</span>
+                <h2>Ready to <span class="outline-text">play?</span></h2>
+                <div class="ix-get-plats"><span><img class="ui-ico" src="UIAtlas/web/google-play.webp" alt="" width="20" height="20">Google Play</span></div>
+                <div class="hero-actions ix-get-actions"><a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" class="btn btn-green" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.webp" alt="" width="20" height="20">Get It On Google Play <span class="arrow">→</span></a></div>
+            </div>
+        </section>
+
+        <section id="more-games">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">More From iONiX</span>
+                    <h2>You might also <span class="outline-text">like</span></h2>
+                </header>
+                <div class="ix-cards ix-cards-2">
+                    <a href="port-empire-cargo-tycoon.html" class="ix-card is-live">
+                        <span class="ix-card-art">
+                            <img class="ix-card-bg" src="Games/web/port-empire-cargo-tycoon-art-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async">
+                            <img class="ix-card-logo" src="Games/web/port-empire-cargo-tycoon-logo.webp" alt="" width="640" height="222" loading="lazy" decoding="async">
+                            <span class="ix-card-ribbon">New &amp; Live</span>
+                        </span>
+                        <span class="ix-card-body">
+                            <h3>Port Empire Cargo Tycoon</h3>
+                            <p>Run the docks — load cargo, upgrade ships, and grow a small harbor into a global port empire.</p>
+                        </span>
+                    </a>
+                    <a href="idle-bakery-cafe.html" class="ix-card is-live">
+                        <span class="ix-card-art">
+                            <img class="ix-card-bg" src="Games/web/idle-bakery-cafe-art-800.webp" alt="" width="800" height="450" loading="lazy" decoding="async">
+                            <img class="ix-card-logo" src="Games/web/idle-bakery-cafe-logo.webp" alt="" width="520" height="264" loading="lazy" decoding="async">
+                            <span class="ix-card-ribbon">Live</span>
+                        </span>
+                        <span class="ix-card-body">
+                            <h3>Idle Bakery Cafe</h3>
+                            <p>Bake, serve, and expand your cozy cafe into the busiest bakery in town.</p>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="container">
+
+            <div class="ix-foot">
+                <div class="ix-foot-brand">
+                    <a href="index.html" aria-label="iONiX Games home"><img src="LOGO/logo.webp" alt="iONiX Games" width="360" height="180" loading="lazy"></a>
+                    <span>Independent game studio · idle tycoon games for mobile and web.</span>
+                </div>
+                <nav class="ix-foot-col" aria-label="Our games">
+                    <h2>Play</h2>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.portempire&amp;pcampaignid=web_share" target="_blank" rel="noopener">Port Empire Cargo Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener">Juice King Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.idlebakerycafe" target="_blank" rel="noopener">Idle Bakery Cafe</a></li>
+                        <li><a href="games.html">All games</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Studio">
+                    <h2>Studio</h2>
+                    <ul>
+                        <li><a href="ion-engine.html">Ion Engine</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Follow">
+                    <h2>Say hi</h2>
+                    <ul>
+                        <li><a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20" loading="lazy">Instagram</a></li>
+                        <li><a href="mailto:ionixgames26@gmail.com"><img class="ui-ico" src="UIAtlas/web/email.webp" alt="" width="20" height="20" loading="lazy">Email us</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <p class="ix-foot-legal">© 2026 iONiX Games. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
+
+        </div>
+
+    </footer>
+
+    <script src="ionix.js" defer></script>
+
+</body>
+
+</html>

@@ -88,14 +88,17 @@
         'com.ionixgames.portempire': 'Port Empire Cargo Tycoon'
     };
 
+    var CG_GAMES = {
+        'idle-bakery-cafe': 'Idle Bakery Cafe'
+    };
+
     var SOCIAL = [
         ['instagram.com', 'instagram'],
         ['discord.gg', 'discord'],
         ['discord.com', 'discord'],
         ['youtube.com', 'youtube'],
         ['x.com', 'x'],
-        ['twitter.com', 'x'],
-        ['crazygames.com', 'crazygames']
+        ['twitter.com', 'x']
     ];
 
     // Which part of the page a link sits in: navbar, footer, or the section id
@@ -121,6 +124,13 @@
         if (a.hostname === 'play.google.com') {
             var id = (a.search.match(/[?&]id=([^&]+)/) || [])[1] || '';
             track('play_store_click', { game: GAMES[id] || id, link_location: where });
+            return;
+        }
+
+        // CrazyGames is a store (play in browser), not a social link
+        if (a.hostname.indexOf('crazygames.com') !== -1) {
+            var slug = (a.pathname.match(/\/game\/([^/]+)/) || [])[1] || '';
+            track('crazygames_click', { game: CG_GAMES[slug] || slug, link_location: where });
             return;
         }
 
@@ -174,7 +184,7 @@
             var logo = box.querySelector('img[alt]');
             kind = box.classList.contains('ix-feature') ? 'home_banner' : 'games_page';
             game = title ? title.textContent.trim() : (logo ? logo.alt.trim() : 'unknown');
-            target = !a ? 'art' : (a.hostname === 'play.google.com' ? 'play_button' : 'other_button');
+            target = !a ? 'art' : (a.hostname === 'play.google.com' || a.hostname.indexOf('crazygames.com') !== -1 ? 'play_button' : 'other_button');
         }
 
         track('featured_poster_click', { game: game, poster: kind, click_target: target, link_location: linkLocation(box) });

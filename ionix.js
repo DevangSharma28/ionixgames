@@ -62,7 +62,7 @@
         var wallet = document.createElement('div');
         wallet.className = 'ix-wallet';
         wallet.innerHTML =
-            '<button type="button" class="ix-pill ix-pill-coin" aria-label="Coins — click to collect a bonus">' +
+            '<button type="button" class="ix-pill ix-pill-coin" aria-label="Play coins, just for fun — click to collect a bonus" title="Just for fun — not a real currency">' +
             '<span class="ix-coin-icon" aria-hidden="true"></span><span class="ix-coin-val">0</span><span class="ix-rate">+' + RATE + '/s</span></button>' +
             '<span class="ix-pill ix-pill-gem" aria-label="Gems"><span class="ix-gem-icon" aria-hidden="true"></span><span class="ix-gem-val">0</span></span>';
         actions.parentNode.insertBefore(wallet, actions);
@@ -124,11 +124,11 @@
         var lines = [
             '<span class="k">$</span> ion init <span class="g">juice-king-tycoon</span>',
             '<span class="o">›</span> scaffolding scene graph ......... <span class="g">ok</span>',
-            '<span class="o">›</span> compiling shaders (42) .......... <span class="g">ok</span>',
+            '<span class="o">›</span> compiling shaders ............... <span class="g">ok</span>',
             '<span class="o">›</span> hot-reload bridge ............... <span class="g">live</span>',
             '<span class="k">$</span> ion build --target <span class="g">web,pc,mobile</span>',
-            '<span class="o">›</span> bundle 3.8 MB · 60 fps · 0 warnings',
-            '<span class="g">✔ ready to ship.</span> <span class="cursor"></span>'
+            '<span class="o">›</span> packaging builds ................ <span class="g">ok</span>',
+            '<span class="g">✔ concept preview — engine in development</span> <span class="cursor"></span>'
         ];
         if (REDUCED) { pre.innerHTML = lines.join('\n'); return; }
         var started = false;
@@ -222,6 +222,24 @@
             });
         }, { threshold: 0.15 });
         els.forEach(function (el) { io.observe(el); });
+    })();
+
+    /* ---------- Hero: mouse parallax on the sky layers ---------- */
+    (function () {
+        var hero = document.querySelector('.ix-hero');
+        if (!hero || REDUCED || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+        var queued = false, x = 0, y = 0;
+        hero.addEventListener('mousemove', function (e) {
+            x = e.clientX / window.innerWidth - 0.5;
+            y = e.clientY / window.innerHeight - 0.5;
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(function () {
+                queued = false;
+                hero.style.setProperty('--px', x.toFixed(3));
+                hero.style.setProperty('--py', y.toFixed(3));
+            });
+        });
     })();
 
     /* ---------- Shared page UI (was duplicated inline on every page) ---------- */

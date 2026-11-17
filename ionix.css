@@ -1743,3 +1743,983 @@ a, button, .btn, input, textarea, select, .demo-coin, .ix-pill {
     .ix-poster > .ix-poster-logo { top: 5%; left: 4%; width: 52%; }
 
 }
+
+/* ===========================================================
+   SYSTEM: motion tokens, focus, shared components (Nov 2026)
+=========================================================== */
+
+:root {
+
+    --t-fast: .15s;          /* small feedback: chips, links */
+    --t-med: .28s;           /* component transitions */
+    --t-slow: .55s;          /* reveals */
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+
+}
+
+/* One visible keyboard focus style for everything */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 8px;
+
+}
+
+/* ---------- Footer ---------- */
+
+.page-header h1 { text-transform: none; margin: 20px 0 22px; }
+
+.ix-foot {
+
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    gap: 36px;
+    padding-bottom: 34px;
+    margin-bottom: 26px;
+    border-bottom: 2px dashed rgba(47, 37, 69, .35);
+
+}
+
+.ix-foot-brand { display: flex; flex-direction: column; gap: 14px; color: #fff; font-weight: 700; text-shadow: 0 1px 0 var(--ink); max-width: 280px; }
+.ix-foot-brand a { border: 0; display: inline-block; width: max-content; }
+.ix-foot-brand img { width: 120px; height: auto; filter: drop-shadow(0 3px 0 var(--ink)); }
+
+.ix-foot-col h2 {
+
+    font-size: 20px;
+    color: var(--gold);
+    -webkit-text-stroke: 5px var(--ink);
+    paint-order: stroke fill;
+    margin: 0 0 12px;
+
+}
+
+.ix-foot-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ix-foot-col a {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 32px;
+    color: #fff;
+    font-weight: 800;
+    border: 0;
+    text-shadow: 0 1px 0 var(--ink);
+    transition: color var(--t-fast), transform var(--t-fast) var(--ease-out);
+
+}
+
+.ix-foot-col a:hover { color: var(--gold); transform: translateX(3px); }
+.ix-foot-col .ui-ico { width: 20px; height: 20px; }
+
+.ix-foot-legal { font-size: 15px !important; }
+
+@media (max-width: 860px) {
+
+    .ix-foot { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+    .ix-foot-brand { grid-column: 1 / -1; }
+
+}
+
+/* ---------- Contact: topic chips + status states ---------- */
+
+.ix-topics { border: 0; margin: 0 0 6px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ix-topics legend { font-family: var(--display); font-size: 15px; letter-spacing: .03em; color: var(--ink); margin-bottom: 10px; padding: 0; }
+
+.ix-topics button {
+
+    font: 800 14px/1 var(--body);
+    padding: 10px 14px;
+    min-height: 40px;
+    color: var(--ink);
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 0 3px 0 var(--ink);
+    cursor: pointer;
+    transition: transform var(--t-fast) var(--ease-out), background var(--t-fast);
+
+}
+
+.ix-topics button:hover { transform: translateY(-2px); }
+.ix-topics button:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--ink); }
+.ix-topics button[aria-pressed="true"] { background: var(--gold); }
+
+.form-status { font-weight: 700; }
+.form-status[data-state="busy"] { color: var(--ink2); }
+.form-status[data-state="ok"] { color: #2E7D3A; }
+.form-status[data-state="error"] { color: #B4234A; }
+.contact-form button[type="submit"]:disabled { opacity: .65; cursor: progress; }
+
+/* ---------- About: connected process journey + milestone links ---------- */
+
+ol.process-journey { list-style: none; margin: 0; padding: 0; position: relative; counter-reset: none; }
+
+.process-journey::before {
+
+    content: "";
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 46px;
+    height: 6px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 14px, transparent 14px 24px);
+    opacity: .35;
+    z-index: 0;
+
+}
+
+.process-journey .process-card { z-index: 1; }
+.process-journey .process-card:last-child { background: #EFFBEF !important; }
+
+a.achievement-card { display: block; text-decoration: none; color: var(--ink); }
+a.achievement-card:hover { transform: translateY(-6px) rotate(-.4deg); box-shadow: 0 12px 0 var(--ink), inset 0 -6px 0 var(--cream2) !important; }
+
+@media (max-width: 1100px) {
+
+    .process-journey::before { left: 46px; right: auto; top: 20px; bottom: 20px; width: 6px; height: auto; background: repeating-linear-gradient(180deg, var(--ink) 0 14px, transparent 14px 24px); }
+
+}
+
+/* ---------- Ion Engine page ---------- */
+
+.ix-engine-status { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+
+.ix-engine-status li {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: var(--pop-sm);
+    font-family: var(--display);
+    font-size: 14px;
+    letter-spacing: .03em;
+    color: var(--ink);
+
+}
+
+.ix-engine-status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--muted); border: 2px solid var(--ink); }
+.ix-engine-status .dot-live { background: var(--grass); animation: ix-pulse 1.8s ease-in-out infinite; }
+
+@keyframes ix-pulse { 50% { box-shadow: 0 0 0 5px rgba(108, 200, 122, .35); } }
+
+#engine-why .section-header p + p { margin-top: 14px; }
+
+.ix-goals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ix-goal { padding: 26px 22px !important; }
+.ix-goal img { width: 48px; height: 48px; }
+.ix-goal h3 { margin: 12px 0 8px; font-size: 22px; }
+
+.ix-goal-tag {
+
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 3px 10px;
+    font-family: var(--display);
+    font-size: 12px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--cream2);
+    border: 2px dashed var(--ink);
+    border-radius: 999px;
+
+}
+
+.ix-road { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: relative; }
+
+.ix-road::before {
+
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 22px;
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--grass) 0 18%, rgba(47, 37, 69, .2) 18%);
+
+}
+
+.ix-road li { position: relative; padding-top: 54px; }
+
+.ix-road li::before {
+
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    border: var(--line) solid var(--ink);
+    box-shadow: var(--pop-sm);
+
+}
+
+.ix-road li.is-now::before { background: var(--grass); }
+.ix-road-when { font-family: var(--display); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: var(--berry2); }
+.ix-road h3 { margin: 6px 0 6px; font-size: 24px; }
+.ix-road p { color: var(--ink2); }
+
+@media (max-width: 1100px) { .ix-goals { grid-template-columns: repeat(2, 1fr); } }
+
+@media (max-width: 760px) {
+
+    .ix-goals { grid-template-columns: 1fr; }
+    .ix-road { grid-template-columns: 1fr; gap: 6px; }
+    .ix-road::before { left: 12px; right: auto; top: 20px; bottom: 20px; width: 6px; height: auto; background: linear-gradient(180deg, var(--grass) 0 22%, rgba(47, 37, 69, .2) 22%); }
+    .ix-road li { padding: 12px 0 12px 50px; }
+    .ix-road li::before { top: 14px; }
+
+}
+
+/* ---------- 404: lost crate in the clouds ---------- */
+
+.ix-lost { min-height: 78vh; display: flex; align-items: center; }
+.ix-lost-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+.ix-lost .hero-actions { margin-top: 30px; }
+
+.ix-lost-scene { position: relative; height: 340px; order: 2; }
+
+.ix-lost-cloud {
+
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: inset 0 -8px 0 #EDE6FA, 0 6px 0 rgba(47, 37, 69, .08);
+
+}
+
+.ix-lost-cloud::before,
+.ix-lost-cloud::after {
+
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+
+}
+
+.ix-lost-cloud::before { left: 22px; bottom: 20px; width: 64px; height: 64px; }
+.ix-lost-cloud::after { left: 70px; bottom: 16px; width: 50px; height: 50px; }
+
+.ix-lost-cloud.c1 { left: 4%; top: 64%; }
+.ix-lost-cloud.c2 { right: 2%; top: 18%; transform: scale(.75); }
+.ix-lost-cloud.c3 { left: 40%; top: 82%; transform: scale(1.15); z-index: 2; }
+
+.ix-lost-crate {
+
+    position: absolute;
+    left: 50%;
+    top: 34%;
+    width: 130px;
+    height: 100px;
+    margin-left: -65px;
+    display: grid;
+    place-items: center;
+    background: repeating-linear-gradient(90deg, var(--berry) 0 16px, var(--berry2) 16px 20px);
+    border: var(--line) solid var(--ink);
+    border-radius: 10px;
+    box-shadow: 0 8px 0 var(--ink);
+    animation: ix-drift 4.5s ease-in-out infinite;
+    z-index: 1;
+
+}
+
+.ix-lost-crate b {
+
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 40px;
+    color: #fff;
+    -webkit-text-stroke: 6px var(--ink);
+    paint-order: stroke fill;
+
+}
+
+.ix-lost-balloon {
+
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    width: 70px;
+    height: 82px;
+    margin-left: -35px;
+    margin-bottom: 46px;
+    background: radial-gradient(circle at 34% 30%, #FFE29A 0 14%, var(--gold) 15%);
+    border: var(--line) solid var(--ink);
+    border-radius: 50% 50% 48% 48%;
+
+}
+
+.ix-lost-balloon::after {
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 2px;
+    height: 48px;
+    background: var(--ink);
+
+}
+
+@keyframes ix-drift {
+    0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+    50% { transform: translate(14px, -16px) rotate(4deg); }
+}
+
+@media (max-width: 760px) {
+
+    .ix-lost-inner { grid-template-columns: 1fr; gap: 10px; }
+    .ix-lost-scene { order: 0; height: 250px; }
+    .ix-lost-crate { top: 42%; transform-origin: center; }
+
+}
+
+/* ---------- Hero: fallback when WebGL / three.js is unavailable ---------- */
+
+#ix-world.ix-world-fallback {
+
+    background: url('Games/web/port-empire-cargo-tycoon-art-800.webp') right 6% center / min(46vw, 640px) auto no-repeat;
+    opacity: .9;
+
+}
+
+@media (max-width: 760px) { #ix-world.ix-world-fallback { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ix-lost-crate, .ix-engine-status .dot-live { animation: none; }
+
+}
+
+/* ===========================================================
+   TOYVERSE PASS: hero world, poster cards, section bands
+=========================================================== */
+
+/* ---------- Hero world behind the 3D port ---------- */
+
+.ix-sky { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.ix-sky > * { position: absolute; transition: transform .5s var(--ease-out); }
+
+.ix-sun {
+
+    right: 9%;
+    top: 4%;
+    width: min(46vw, 640px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #FFF6DC 0 17%, rgba(255, 222, 160, .85) 18% 19%, rgba(255, 214, 160, .45) 20% 38%, rgba(255, 214, 170, .18) 39% 58%, transparent 60%);
+    transform: translate(calc(var(--px, 0) * -14px), calc(var(--py, 0) * -10px));
+
+}
+
+.ix-isle {
+
+    bottom: 13%;
+    background: linear-gradient(180deg, #A995E0, #9483D2);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    opacity: .7;
+    transform: translate(calc(var(--px, 0) * -24px), calc(var(--py, 0) * -6px));
+
+}
+
+.ix-isle.i1 { left: 44%; width: 240px; height: 70px; }
+.ix-isle.i2 { right: -40px; width: 380px; height: 120px; opacity: .55; }
+
+.ix-sea {
+
+    left: -3%;
+    right: -3%;
+    bottom: 0;
+    height: 14%;
+    background: linear-gradient(180deg, #9FE3EE 0%, #79CFE3 60%, rgba(121, 207, 227, 0) 100%);
+    transform: translate(calc(var(--px, 0) * -36px), 0);
+
+}
+
+.ix-sea::before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -11px;
+    height: 12px;
+    background: radial-gradient(circle at 16px 16px, #9FE3EE 0 15px, transparent 15.5px) 0 0 / 32px 12px repeat-x;
+    animation: ix-wave 6s linear infinite;
+
+}
+
+.ix-sea::after {
+
+    content: "";
+    position: absolute;
+    inset: 22% 0 auto 0;
+    height: 4px;
+    background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .7) 0 46px, transparent 46px 130px);
+    border-radius: 2px;
+    animation: ix-wave 9s linear infinite reverse;
+
+}
+
+@keyframes ix-wave { to { background-position-x: 128px; } }
+
+@media (max-width: 760px) {
+
+    .ix-isle { display: none; }
+    .ix-sun { right: -20%; top: 30%; width: 110vw; }
+    .ix-sea { height: 9%; }
+    .ix-sea::before, .ix-sea::after { animation: none; }
+
+}
+
+/* ---------- Lineup: poster cards ---------- */
+
+.ix-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+
+.ix-card {
+
+    display: flex;
+    flex-direction: column;
+    background: var(--cream);
+    border: var(--line) solid var(--ink);
+    border-radius: 26px;
+    box-shadow: var(--pop), inset 0 -6px 0 var(--cream2);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform var(--t-med) var(--bounce), box-shadow var(--t-med) var(--bounce);
+
+}
+
+.ix-card:nth-child(odd) { transform: rotate(-.6deg); }
+.ix-card:nth-child(even) { transform: rotate(.6deg); }
+.ix-card:hover, .ix-card:focus-visible { transform: translateY(-8px) rotate(0); box-shadow: 0 13px 0 var(--ink), inset 0 -6px 0 var(--cream2); }
+
+.ix-card-art {
+
+    position: relative;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-bottom: var(--line) solid var(--ink);
+
+}
+
+.ix-card-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow) var(--ease-out); }
+.ix-card:hover .ix-card-bg { transform: scale(1.08); }
+
+.ix-card-logo { position: relative; width: 78%; height: auto; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .4)); transition: transform var(--t-med) var(--bounce); }
+.ix-card:hover .ix-card-logo { transform: scale(1.07) rotate(-2deg); }
+
+.ix-card-ribbon {
+
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px 3px;
+    font-family: var(--display);
+    font-size: 13px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 0 var(--ink);
+    background: var(--grass);
+    border: 2.5px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 0 3px 0 var(--ink);
+    transform: rotate(-3deg);
+
+}
+
+.ix-card:first-child .ix-card-ribbon { background: var(--berry); }
+.ix-card.is-soon .ix-card-ribbon { background: var(--violet); }
+
+.ix-card-body { display: flex; flex-direction: column; gap: 8px; flex: 1; padding: 18px 20px 22px; }
+.ix-card-body h3 { font-size: 23px; line-height: 1.1; color: var(--ink); text-transform: none; }
+.ix-card-body p { margin: 0; font-size: 15px; color: var(--text2); }
+
+.ix-card-plats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
+
+.ix-card-plats span {
+
+    padding: 4px 10px;
+    font-family: var(--display);
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+
+}
+
+@media (max-width: 1100px) { .ix-cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .ix-cards { grid-template-columns: 1fr; } .ix-card { transform: none !important; } .ix-card-art { aspect-ratio: 16 / 9; } }
+
+/* ---------- Lineup sits on a cream cloud band ---------- */
+
+#featured-games {
+
+    position: relative;
+    margin-top: 60px;
+    background: linear-gradient(180deg, #FFFDF8, rgba(255, 253, 248, 0));
+
+}
+
+#featured-games::before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -30px;
+    height: 31px;
+    background: radial-gradient(circle at 30px 34px, #FFFDF8 0 29px, transparent 29.5px) 0 0 / 60px 31px repeat-x;
+
+}
+
+/* ---------- Engine teaser: night workshop panel ---------- */
+
+#engine-teaser .ix-engine {
+
+    padding: clamp(26px, 4.5vw, 60px);
+    border: var(--line) solid var(--ink);
+    border-radius: 36px;
+    box-shadow: 0 8px 0 var(--ink);
+    background:
+        radial-gradient(circle at 12% 20%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(circle at 32% 72%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 58% 14%, #FFE7A8 0 2px, transparent 2.5px),
+        radial-gradient(circle at 84% 38%, #fff 0 1.2px, transparent 1.7px),
+        radial-gradient(circle at 46% 46%, #fff 0 1px, transparent 1.5px),
+        radial-gradient(circle at 92% 84%, #fff 0 1.5px, transparent 2px),
+        radial-gradient(ellipse at 80% 0%, rgba(138, 111, 209, .55), transparent 60%),
+        linear-gradient(160deg, #3A2E5C, #2A2140);
+
+}
+
+#engine-teaser .section-header p { color: #DDD3F5; }
+#engine-teaser .ix-term { box-shadow: 0 8px 0 #1B1430 !important; border-color: #1B1430 !important; }
+
+/* ---------- Featured banner: taller, more cinematic ---------- */
+
+.ix-feature { min-height: 560px; border-radius: 32px; box-shadow: 0 8px 0 var(--ink); }
+.ix-feature::before { background: linear-gradient(90deg, rgba(47, 37, 69, .9) 0%, rgba(47, 37, 69, .5) 38%, transparent 64%), linear-gradient(0deg, rgba(47, 37, 69, .35), transparent 30%); }
+.ix-feature-body { padding: 56px; max-width: 520px; }
+.ix-feature-body img { max-width: 440px; }
+
+@media (max-width: 760px) { .ix-feature { min-height: 0; } .ix-feature-body { padding: 26px; } }
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ix-sea::before, .ix-sea::after { animation: none; }
+    .ix-sky > * { transition: none; transform: none; }
+    .ix-card { transition: none; }
+
+}
+
+/* ---------- Inner page headers: rolling hills horizon ---------- */
+
+.page-header { padding-bottom: 130px; isolation: isolate; }
+
+.page-header::before {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(60% 100% at 18% 100%, #B6E7A9 0 60%, transparent 60.5%),
+        radial-gradient(55% 90% at 78% 100%, #9FDB93 0 60%, transparent 60.5%),
+        radial-gradient(40% 70% at 50% 100%, rgba(169, 149, 224, .55) 0 60%, transparent 61%);
+    opacity: .9;
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent);
+    mask-image: linear-gradient(180deg, #000 55%, transparent);
+
+}
+
+.ix-lost::before { display: none; }
+
+@media (max-width: 760px) { .page-header { padding-bottom: 100px; } .page-header::before { height: 80px; } }
+
+/* ===========================================================
+   FEEL PASS: port grounding, games cards, feel lab stage
+=========================================================== */
+
+/* Soft glow + shadow pad under the floating port (canvas is transparent) */
+.ix-pad {
+
+    right: 6%;
+    top: 58%;
+    width: min(44vw, 620px);
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(74, 52, 120, .28), rgba(74, 52, 120, .1) 60%, transparent);
+    filter: blur(6px);
+    transform: translate(calc(var(--px, 0) * -10px), 0);
+    animation: ix-pad 6s ease-in-out infinite;
+
+}
+
+@keyframes ix-pad { 50% { opacity: .75; scale: .94; } }
+
+@media (max-width: 760px) { .ix-pad { display: none; } }
+
+/* ---------- Games page: poster-style cards ---------- */
+
+.projects-grid-text .project-card-text:nth-child(odd) { rotate: -.5deg; }
+.projects-grid-text .project-card-text:nth-child(even) { rotate: .5deg; }
+.projects-grid-text .project-card-text:hover { rotate: 0deg; }
+
+.game-art .game-bg { transition: transform var(--t-slow) var(--ease-out); }
+.project-card:hover .game-art .game-bg { transform: scale(1.07); }
+
+.project-card-text .project-body h3 { font-size: 28px; }
+
+/* Shine sweep across the art on hover */
+.game-art::after {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, .35) 50%, transparent 65%) -160% 0 / 200% 100% no-repeat;
+    transition: background-position .7s var(--ease-out);
+    pointer-events: none;
+
+}
+
+.project-card:hover .game-art::after { background-position: 160% 0; }
+
+/* Coming-soon game reads as "not yet": dimmed art, dashed outline */
+.project-card-text:last-child:not(:has(.btn)) { border-style: dashed !important; }
+.project-card-text:last-child:not(:has(.btn)) .game-bg { filter: saturate(.7); }
+
+/* ---------- Feel Lab: phone on a sunburst stage ---------- */
+
+.ix-lab .hero-visual { position: relative; isolation: isolate; }
+
+.ix-lab .hero-visual::before {
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: 560px;
+    height: 560px;
+    margin: -280px 0 0 -280px;
+    z-index: -1;
+    border-radius: 50%;
+    background: repeating-conic-gradient(rgba(255, 194, 74, .38) 0 10deg, rgba(255, 194, 74, 0) 10deg 20deg);
+    -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent);
+    mask-image: radial-gradient(closest-side, #000 30%, transparent);
+    animation: ix-spin 40s linear infinite;
+
+}
+
+.ix-lab .phone-frame { position: relative; }
+
+.ix-lab .phone-caption { margin-top: 44px; }
+
+.ix-lab .phone-frame::after {
+
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 22px);
+    width: 300px;
+    height: 46px;
+    margin-left: -150px;
+    z-index: -1;
+    border-radius: 50%;
+    background: var(--violet);
+    border: var(--line) solid var(--ink);
+    box-shadow: 0 8px 0 var(--ink), inset 0 6px 0 rgba(255, 255, 255, .3);
+
+}
+
+@keyframes ix-spin { to { rotate: 360deg; } }
+
+@media (max-width: 760px) {
+
+    .ix-lab .hero-visual::before { width: 400px; height: 400px; margin: -200px 0 0 -200px; }
+    .ix-lab .phone-frame::after { width: 240px; margin-left: -120px; }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .ix-pad, .ix-lab .hero-visual::before { animation: none; }
+    .game-art::after { display: none; }
+
+}
+#featured-poster + .page-header::before { display: none; }
+@media (max-width: 420px) { .ix-kicker .hero-tag { font-size: 11px; padding: 5px 9px; } }
+
+/* ===========================================================
+   GAME LANDING PAGES (port-empire-cargo-tycoon.html etc.)
+=========================================================== */
+
+.ix-title-link { color: inherit; text-decoration: none; background: linear-gradient(var(--gold), var(--gold)) 0 100% / 0 3px no-repeat; transition: background-size var(--t-med) var(--ease-out); }
+.ix-title-link:hover { background-size: 100% 3px; }
+
+.ix-gh { padding: 110px 0 40px !important; }
+
+.ix-crumbs { margin-bottom: 18px; font-family: var(--display); font-size: 15px; letter-spacing: .03em; color: var(--ink2); }
+.ix-crumbs a { color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--gold); }
+
+.ix-gh-stage {
+
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    min-height: min(72vh, 640px);
+    border: var(--line) solid var(--ink);
+    border-radius: 34px;
+    box-shadow: 0 10px 0 var(--ink);
+    overflow: hidden;
+    isolation: isolate;
+
+}
+
+.ix-gh-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; animation: ix-kenburns 22s ease-in-out infinite alternate; }
+
+.ix-gh-stage::before {
+
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(47, 37, 69, .9) 0%, rgba(47, 37, 69, .55) 40%, transparent 68%), linear-gradient(0deg, rgba(47, 37, 69, .5), transparent 40%);
+
+}
+
+@keyframes ix-kenburns { to { transform: scale(1.08) translate(-1.5%, -1%); } }
+
+.ix-gh-body { max-width: 540px; padding: clamp(24px, 4.5vw, 56px); color: #fff; }
+.ix-gh-body h1 { margin: 10px 0 6px; line-height: 0; }
+.ix-gh-logo { width: 100%; max-width: 440px; height: auto; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .45)); }
+.ix-gh-body p { color: #fff; font-size: 19px; margin: 16px 0 26px; text-shadow: 0 2px 0 rgba(0, 0, 0, .25); }
+.ix-gh-body .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.ix-gh-icon {
+
+    width: 84px;
+    height: 84px;
+    border-radius: 22px;
+    border: var(--line) solid var(--ink);
+    box-shadow: var(--pop);
+    transform: rotate(-6deg);
+
+}
+
+.ix-loop { grid-template-columns: repeat(3, 1fr); }
+.ix-loop .ix-goal { counter-increment: loop; }
+.ix-loop .ix-goal::before {
+
+    content: counter(loop);
+    position: absolute;
+    top: -16px;
+    right: 18px;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    font-family: var(--display);
+    font-size: 20px;
+    color: #fff;
+    -webkit-text-stroke: 4px var(--ink);
+    paint-order: stroke fill;
+    background: var(--gold);
+    border: var(--line) solid var(--ink);
+    border-radius: 50%;
+    box-shadow: var(--pop-sm);
+
+}
+
+.ix-loop { counter-reset: loop; }
+
+.ix-gallery { display: grid; grid-template-columns: 1.7fr 1fr; gap: 22px; align-items: stretch; }
+
+.ix-shot {
+
+    margin: 0;
+    overflow: hidden;
+    border: var(--line) solid var(--ink);
+    border-radius: 26px;
+    box-shadow: var(--pop);
+    background: var(--cream2);
+
+}
+
+.ix-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform var(--t-slow) var(--ease-out); }
+.ix-shot:hover img { transform: scale(1.04); }
+.ix-shot-alt { rotate: 1.2deg; max-height: 560px; }
+
+.ix-get-plats { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: -18px 0 30px; }
+
+.ix-get-plats span {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    font-family: var(--display);
+    font-size: 14px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: var(--pop-sm);
+
+}
+
+.ix-get-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+#game-get { padding-top: 90px !important; }
+
+.ix-cards-2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+
+@media (max-width: 860px) {
+
+    .ix-loop { grid-template-columns: 1fr; gap: 26px; }
+    .ix-gallery { grid-template-columns: 1fr; }
+    .ix-shot-alt { rotate: 0deg; max-height: none; }
+
+}
+
+@media (max-width: 760px) {
+
+    .ix-gh { padding-top: 90px !important; }
+    .ix-gh-stage { min-height: 0; padding-top: 52vw; }
+    .ix-gh-stage::before { background: linear-gradient(0deg, rgba(47, 37, 69, .95) 0%, rgba(47, 37, 69, .75) 55%, transparent 100%); }
+    .ix-gh-icon { width: 64px; height: 64px; }
+    .ix-gh-body p { font-size: 17px; }
+    .ix-gh-body .btn { width: 100%; justify-content: center; }
+
+}
+
+@media (max-width: 560px) { .ix-cards-2 { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) { .ix-gh-bg { animation: none; } }
+
+/* ---------- Phones: port fully visible on the first screen ---------- */
+
+@media (max-width: 760px) {
+
+    .ix-hero-inner { padding-top: 18px; }
+    .ix-kicker { margin-bottom: 10px; }
+    .ix-wordmark { margin-bottom: 4px; }
+    .ix-hero-row h2 { margin: 6px 0 14px; }
+    .ix-hero-row p { display: none; }  /* tagline above says the same thing */
+    .ix-hero-row .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ix-hero-row .hero-actions .btn { font-size: 15px; padding: 13px 10px 12px; justify-content: center; white-space: nowrap; }
+    #ix-world { height: min(340px, 44svh); margin-top: 6px; }
+
+}
+
+@media (max-width: 380px) { .ix-hero-row .hero-actions .btn { font-size: 13px; } }
+
+/* ---------- Card title bars (About + Contact) ---------- */
+
+.about-bio, .about-facts, .contact-form, .ix-direct { overflow: hidden; padding: 0 0 26px !important; }
+.about-bio > :not(.ix-cardbar), .about-facts > :not(.ix-cardbar), .contact-form > :not(.ix-cardbar), .ix-direct > :not(.ix-cardbar) { margin-left: 30px; margin-right: 30px; }
+
+.ix-cardbar {
+
+    margin: 0 0 24px;
+    padding: 14px 30px 12px;
+    font-size: 22px;
+    letter-spacing: .03em;
+    color: #fff;
+    -webkit-text-stroke: 5px var(--ink);
+    paint-order: stroke fill;
+    text-shadow: 0 3px 0 var(--ink);
+    background: repeating-linear-gradient(-45deg, var(--violet) 0 16px, var(--violet2) 16px 32px);
+    border-bottom: var(--line) solid var(--ink);
+
+}
+
+.ix-cardbar-gold { background: repeating-linear-gradient(-45deg, var(--gold) 0 16px, var(--gold2) 16px 32px); }
+.ix-cardbar-grass { background: repeating-linear-gradient(-45deg, var(--grass) 0 16px, var(--grass2) 16px 32px); }
+
+/* Story: lead paragraph reads like a game intro */
+.about-bio p:first-of-type { font-size: 19px; color: var(--ink); }
+
+/* Facts: values as little stat chips */
+.about-facts .fact-value { padding: 3px 10px; background: var(--cream2); border: 2px solid var(--ink); border-radius: 999px; font-weight: 800; }
+
+/* Milestones: icons as game-icon tiles, cards tilt */
+#recognition .achievement-icon { width: 92px; height: 92px; padding: 0; overflow: hidden; border-radius: 24px !important; transform: rotate(-5deg); }
+#recognition .achievement-icon img { width: 100%; height: 100%; object-fit: cover; }
+#recognition a.achievement-card:nth-child(2) .achievement-icon { transform: rotate(4deg); }
+#recognition a.achievement-card::before {
+
+    content: "Live";
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 3px 10px 2px;
+    font-family: var(--display);
+    font-size: 12px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 0 var(--ink);
+    background: var(--grass);
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 0 2px 0 var(--ink);
+
+}
+
+.ix-direct .info-value { color: var(--ink); font-weight: 800; }
+.ix-direct a.info-value { text-decoration: none; border-bottom: 2px solid var(--gold); }
+
+@media (max-width: 760px) {
+
+    .about-bio > :not(.ix-cardbar), .about-facts > :not(.ix-cardbar), .contact-form > :not(.ix-cardbar), .ix-direct > :not(.ix-cardbar) { margin-left: 20px; margin-right: 20px; }
+    .ix-cardbar { padding: 12px 20px 10px; font-size: 20px; }
+
+}
+
+/* ---------- Tablets (761–1024): stacked hero, tidy nav + stats ---------- */
+
+.nav-links a { white-space: nowrap; }
+
+@media (min-width: 761px) and (max-width: 1024px) {
+
+    .ix-hero { min-height: 0; flex-direction: column; align-items: stretch; }
+    .ix-hero-inner { order: 1; padding: 50px 0 0; grid-template-columns: minmax(0, 640px); }
+    #ix-world { position: relative; inset: auto; order: 2; width: 100%; height: 440px; }
+    .ix-pad, .ix-isle { display: none; }
+    .ix-sun { right: 10%; top: 38%; width: 70vw; }
+
+    .nav-links { gap: 0; }
+    .nav-links a { font-size: 15px; padding: 8px 9px 7px; }
+    .navbar .nav-actions { display: none; }
+
+    .ix-metrics .hero-metric { flex-direction: column; text-align: center; gap: 10px; padding: 18px 12px; }
+
+}
+@media (min-width: 761px) and (max-width: 1024px) { .ix-hero-row .hero-actions { justify-content: flex-start; } }

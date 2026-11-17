@@ -25,11 +25,11 @@
     </script>
     <script src="ionix-analytics.js" defer></script>
     <title>Ion Engine | Ionix Studio</title>
-    <meta name="description" content="Ion Engine is Ionix Studio's in-house game engine, coming soon to other creators.">
+    <meta name="description" content="Ion Engine is iONiX Games' in-house engine, in development: why we're building it, what it's for, and the roadmap to early access.">
     <link rel="canonical" href="https://devangsharma28.github.io/ionixgames/ion-engine.html">
     <meta property="og:site_name" content="iONiX Games">
     <meta property="og:title" content="Ion Engine | Ionix Studio">
-    <meta property="og:description" content="Ion Engine is Ionix Studio's in-house game engine, coming soon to other creators.">
+    <meta property="og:description" content="Ion Engine is iONiX Games' in-house engine, in development: why we're building it, what it's for, and the roadmap to early access.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://devangsharma28.github.io/ionixgames/ion-engine.html">
     <meta property="og:image" content="https://devangsharma28.github.io/ionixgames/LOGO/social-card.jpg">
@@ -124,12 +124,91 @@
 
     <main id="main-content">
 
-        <section id="page-header" class="page-header" data-index="03 / ION ENGINE" style="min-height:70vh;">
+        <section id="page-header" class="page-header" data-index="03 / ION ENGINE">
             <div class="container">
                 <header class="section-header">
-                    <span class="eyebrow">Ion Engine</span>
-                    <h2>Coming Soon</h2>
+                    <span class="eyebrow">In Development</span>
+                    <h1>Ion Engine</h1>
+                    <p>The workshop behind our games. Every title we ship teaches us something about the tools we wish we had — Ion Engine is us building them properly.</p>
                 </header>
+                <ul class="ix-engine-status" aria-label="Project status">
+                    <li><span class="dot dot-live" aria-hidden="true"></span>Status: in development</li>
+                    <li><span class="dot" aria-hidden="true"></span>Public build: not yet</li>
+                    <li><span class="dot" aria-hidden="true"></span>Early access: planned</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="engine-why">
+            <div class="container ix-engine">
+                <header class="section-header" style="margin-bottom:0;">
+                    <span class="eyebrow">Why An Engine?</span>
+                    <h2>Tools shaped by <span class="outline-text">real games</span></h2>
+                    <p>Most tools force a trade-off between speed and control. We'd rather not choose. So alongside every game we ship, we're building our own — shaped by what we actually needed on real projects, not a features checklist.</p>
+                    <p>Ion Engine is where the lessons from those games go next.</p>
+                </header>
+                <div class="ix-term" role="img" aria-label="Illustrative concept of the Ion Engine command line — not a real build log">
+                    <div class="ix-term-bar"><span>ION://TERMINAL</span><span>CONCEPT · IN DEVELOPMENT</span></div>
+                    <pre id="ix-term-out"></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="engine-goals">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Design Goals</span>
+                    <h2>What we're <span class="outline-text">building toward</span></h2>
+                    <p>These are goals, not shipped features. We'll mark each one as it becomes real.</p>
+                </header>
+                <div class="ix-goals">
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/gamepad.webp" alt="" width="48" height="48" loading="lazy">
+                        <span class="ix-goal-tag">Goal</span>
+                        <h3>Game feel first</h3>
+                        <p>Juice, timing and feedback treated as core systems — the tiny shake, the coin pop, the combo window — not afterthoughts.</p>
+                    </article>
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/clock.webp" alt="" width="48" height="48" loading="lazy">
+                        <span class="ix-goal-tag">Goal</span>
+                        <h3>Fast iteration</h3>
+                        <p>Change a number, see it in the game. The shorter the loop between idea and playtest, the better the game gets.</p>
+                    </article>
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/web.webp" alt="" width="48" height="48" loading="lazy">
+                        <span class="ix-goal-tag">Goal</span>
+                        <h3>Mobile &amp; web</h3>
+                        <p>Built for the platforms we actually ship on, and tuned to run smoothly on everyday phones, not just dev machines.</p>
+                    </article>
+                    <article class="card ix-goal">
+                        <img src="UIAtlas/web/wrench.webp" alt="" width="48" height="48" loading="lazy">
+                        <span class="ix-goal-tag">Goal</span>
+                        <h3>Tycoon toolkit</h3>
+                        <p>The systems every idle game needs — economies, upgrades, offline earnings — as reusable building blocks.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="engine-roadmap">
+            <div class="container">
+                <header class="section-header">
+                    <span class="eyebrow">Roadmap</span>
+                    <h2>Where it's <span class="outline-text">headed</span></h2>
+                </header>
+                <ol class="ix-road">
+                    <li class="is-now"><span class="ix-road-when">Now</span><h3>Internal development</h3><p>Building and testing the core alongside our own games.</p></li>
+                    <li><span class="ix-road-when">Next · planned</span><h3>Early access</h3><p>A first build for a small group of creators. No date yet.</p></li>
+                    <li><span class="ix-road-when">Later · planned</span><h3>Public release</h3><p>Opened up to everyone once it's proven on real projects.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="engine-cta" class="ix-cta">
+            <div class="container">
+                <span class="eyebrow">Early Access</span>
+                <h2><a href="contact.html?subject=Ion%20Engine%20early%20access">Want in <span class="outline-text">early?</span></a></h2>
+                <a href="contact.html?subject=Ion%20Engine%20early%20access" class="btn btn-green">Ask About Early Access <span class="arrow">→</span></a>
             </div>
         </section>
 
@@ -139,7 +218,38 @@
 
         <div class="container">
 
-            <p>© 2026 Ionix Studio. All rights reserved. · <a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/google-play.webp" alt="" width="20" height="20">Juice King Tycoon on Google Play</a> · <a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20">Instagram</a> · <a href="privacy.html">Privacy Policy</a></p>
+            <div class="ix-foot">
+                <div class="ix-foot-brand">
+                    <a href="index.html" aria-label="iONiX Games home"><img src="LOGO/logo.webp" alt="iONiX Games" width="360" height="180" loading="lazy"></a>
+                    <span>Independent game studio · idle tycoon games for mobile and web.</span>
+                </div>
+                <nav class="ix-foot-col" aria-label="Our games">
+                    <h2>Play</h2>
+                    <ul>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.portempire&amp;pcampaignid=web_share" target="_blank" rel="noopener">Port Empire Cargo Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.juicekingtycoon" target="_blank" rel="noopener">Juice King Tycoon</a></li>
+                        <li><a href="https://play.google.com/store/apps/details?id=com.ionixgames.idlebakerycafe" target="_blank" rel="noopener">Idle Bakery Cafe</a></li>
+                        <li><a href="games.html">All games</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Studio">
+                    <h2>Studio</h2>
+                    <ul>
+                        <li><a href="ion-engine.html">Ion Engine</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class="ix-foot-col" aria-label="Follow">
+                    <h2>Say hi</h2>
+                    <ul>
+                        <li><a href="https://www.instagram.com/ionix_games.in/" target="_blank" rel="noopener"><img class="ui-ico" src="UIAtlas/web/instagram.webp" alt="" width="20" height="20" loading="lazy">Instagram</a></li>
+                        <li><a href="mailto:ionixgames26@gmail.com"><img class="ui-ico" src="UIAtlas/web/email.webp" alt="" width="20" height="20" loading="lazy">Email us</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <p class="ix-foot-legal">© 2026 iONiX Games. All rights reserved. · <a href="privacy.html">Privacy Policy</a></p>
 
         </div>
 
