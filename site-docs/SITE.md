@@ -508,6 +508,29 @@ New art: `Games/web/*-key-2.webp` (converted from the unused source art in each 
 
 GitHub Pages gzips the 114 KB of CSS to roughly 25 KB, so the live LCP should come in lower. This is not a Lighthouse score, and nothing has been tested on a real device yet.
 
+## 14c. Changing the featured game
+
+The featured game appears in the home page banner and the Games page poster (including its image preload). It's set in **`featured.json`**:
+
+```json
+{ "featured": "idle-bakery-cafe" }
+```
+
+Valid values: `idle-bakery-cafe`, `port-empire-cargo-tycoon`, `juice-king-tycoon`.
+
+**To switch from the browser:**
+1. On github.com, open `featured.json`.
+2. Click the pencil icon and change the value.
+3. Click **Commit changes**.
+
+The deploy runs `.github/scripts/apply_featured.py`, which rewrites the HTML between `<!-- featured:… -->` markers. The site updates in about a minute.
+
+A typo in the name fails the deploy and leaves the live site unchanged. Check the **Actions** tab if the site doesn't update.
+
+**To preview locally:** run `python3 .github/scripts/apply_featured.py`.
+
+**To add a game:** add an entry to `GAMES` in that script and add its art to `Games/web/` (`-art.webp`, `-art-800.webp`, `-logo.webp`).
+
 ## 15. Issues and to-dos found
 
 **Update 17 November 2026** — fixed:
