@@ -424,7 +424,7 @@ ionixgames/
 │   contact.html, privacy.html, 404.html     ← the 7 pages
 ├── style.css (39 KB)          base styles
 ├── ionix.css (46 KB)          cartoon theme, components, page sections
-├── ionix.js (10 KB)           loader, idle wallet, terminal typing, privacy contents, banner tilt, coin bursts, pop-in reveal
+├── ionix.js (10 KB)           loader, idle wallet, terminal typing, privacy contents, banner tilt, coin bursts, pop-in reveal, nav menu, scroll progress/reveal, buttons, card tilt
 ├── ionix-island.js (60 KB)    the 3D cargo port on the home page
 ├── ionix-analytics.js (8 KB)  consent banner + GA4 events
 ├── robots.txt, sitemap.xml
@@ -437,14 +437,11 @@ ionixgames/
 └── site-docs/                 this document + screenshots
 ```
 
-Each page also has a short inline script for:
-- the mobile menu
-- the scroll-progress bar
-- scroll reveal
-- magnetic buttons
-- card tilt
-- Home only: the Feel Lab mini-game
-- Contact only: the form
+`ionix.js` also holds the mobile menu, scroll-progress bar, scroll reveal, magnetic buttons and card tilt for every page.
+
+Page-only inline scripts:
+- Home: the Feel Lab mini-game
+- Contact: the form
 
 **Deployment:**
 1. Pushing to `main` runs `.github/workflows/static.yml`.
