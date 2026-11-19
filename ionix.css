@@ -2723,3 +2723,14 @@ a.achievement-card:hover { transform: translateY(-6px) rotate(-.4deg); box-shado
 
 }
 @media (min-width: 761px) and (max-width: 1024px) { .ix-hero-row .hero-actions { justify-content: flex-start; } }
+
+/* ---------- Lazy logos: explicit CSS heights ----------
+   Chrome flags loading="lazy" images whose CSS size is height:auto
+   ("lazy-loaded images without explicit dimensions"). Fixed/percentage
+   heights + object-fit keep each logo's own proportions. */
+
+.ix-foot-brand img { width: 120px; height: 60px; }
+.ix-feature-body img { width: 100%; max-width: 440px; height: clamp(96px, 12vw, 150px); object-fit: contain; object-position: left center; }
+.ix-card-logo { width: 84%; height: 46%; object-fit: contain; }
+.game-art .game-logo { width: 70%; height: 50%; object-fit: contain; }
+.ix-feature-body .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; } .ix-feature-body .hero-actions .btn { white-space: nowrap; }
